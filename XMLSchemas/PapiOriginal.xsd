@@ -1,0 +1,2617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://bea.com/albpm/PapiWebService"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+	targetNamespace="http://bea.com/albpm/PapiWebService">
+	<xs:element name="OperationException"
+		type="tns:OperationException">
+	</xs:element>
+	<xs:element name="activityAbort" type="tns:activityAbort"></xs:element>
+	<xs:element name="activityAbortResponse"
+		type="tns:activityAbortResponse">
+	</xs:element>
+	<xs:element name="activityAbortTask" type="tns:activityAbortTask"></xs:element>
+	<xs:element name="activityAbortTaskResponse"
+		type="tns:activityAbortTaskResponse">
+	</xs:element>
+	<xs:element name="activityCommit" type="tns:activityCommit"></xs:element>
+	<xs:element name="activityCommitResponse"
+		type="tns:activityCommitResponse">
+	</xs:element>
+	<xs:element name="activityExecute" type="tns:activityExecute"></xs:element>
+	<xs:element name="activityExecuteApplication"
+		type="tns:activityExecuteApplication">
+	</xs:element>
+	<xs:element name="activityExecuteApplicationResponse"
+		type="tns:activityExecuteApplicationResponse">
+	</xs:element>
+	<xs:element name="activityExecuteResponse"
+		type="tns:activityExecuteResponse">
+	</xs:element>
+	<xs:element name="activityExecuteTask"
+		type="tns:activityExecuteTask">
+	</xs:element>
+	<xs:element name="activityExecuteTaskResponse"
+		type="tns:activityExecuteTaskResponse">
+	</xs:element>
+	<xs:element name="activityGetDocumentation"
+		type="tns:activityGetDocumentation">
+	</xs:element>
+	<xs:element name="activityGetDocumentationResponse"
+		type="tns:activityGetDocumentationResponse">
+	</xs:element>
+	<xs:element name="activityGetGrabbableInstances"
+		type="tns:activityGetGrabbableInstances">
+	</xs:element>
+	<xs:element name="activityGetGrabbableInstancesResponse"
+		type="tns:activityGetGrabbableInstancesResponse">
+	</xs:element>
+	<xs:element name="activityPrepare" type="tns:activityPrepare"></xs:element>
+	<xs:element name="activityPrepareResponse"
+		type="tns:activityPrepareResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeAborted"
+		type="tns:instanceCanBeAborted">
+	</xs:element>
+	<xs:element name="instanceCanBeAbortedResponse"
+		type="tns:instanceCanBeAbortedResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeDelegated"
+		type="tns:instanceCanBeDelegated">
+	</xs:element>
+	<xs:element name="instanceCanBeDelegatedResponse"
+		type="tns:instanceCanBeDelegatedResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeEscalated"
+		type="tns:instanceCanBeEscalated">
+	</xs:element>
+	<xs:element name="instanceCanBeEscalatedResponse"
+		type="tns:instanceCanBeEscalatedResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeProcessed"
+		type="tns:instanceCanBeProcessed">
+	</xs:element>
+	<xs:element name="instanceCanBeProcessedResponse"
+		type="tns:instanceCanBeProcessedResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeReassigned"
+		type="tns:instanceCanBeReassigned">
+	</xs:element>
+	<xs:element name="instanceCanBeReassignedResponse"
+		type="tns:instanceCanBeReassignedResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeReassignedToPeer"
+		type="tns:instanceCanBeReassignedToPeer">
+	</xs:element>
+	<xs:element name="instanceCanBeReassignedToPeerResponse"
+		type="tns:instanceCanBeReassignedToPeerResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeResumed"
+		type="tns:instanceCanBeResumed">
+	</xs:element>
+	<xs:element name="instanceCanBeResumedResponse"
+		type="tns:instanceCanBeResumedResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeSelected"
+		type="tns:instanceCanBeSelected">
+	</xs:element>
+	<xs:element name="instanceCanBeSelectedResponse"
+		type="tns:instanceCanBeSelectedResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeSent" type="tns:instanceCanBeSent"></xs:element>
+	<xs:element name="instanceCanBeSentBack"
+		type="tns:instanceCanBeSentBack">
+	</xs:element>
+	<xs:element name="instanceCanBeSentBackResponse"
+		type="tns:instanceCanBeSentBackResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeSentResponse"
+		type="tns:instanceCanBeSentResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeSuspended"
+		type="tns:instanceCanBeSuspended">
+	</xs:element>
+	<xs:element name="instanceCanBeSuspendedResponse"
+		type="tns:instanceCanBeSuspendedResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeUngrabbed"
+		type="tns:instanceCanBeUngrabbed">
+	</xs:element>
+	<xs:element name="instanceCanBeUngrabbedResponse"
+		type="tns:instanceCanBeUngrabbedResponse">
+	</xs:element>
+	<xs:element name="instanceCanBeUnselected"
+		type="tns:instanceCanBeUnselected">
+	</xs:element>
+	<xs:element name="instanceCanBeUnselectedResponse"
+		type="tns:instanceCanBeUnselectedResponse">
+	</xs:element>
+	<xs:element name="instanceGetEvents" type="tns:instanceGetEvents"></xs:element>
+	<xs:element name="instanceGetEventsResponse"
+		type="tns:instanceGetEventsResponse">
+	</xs:element>
+	<xs:element name="instanceGetGlobalActivities"
+		type="tns:instanceGetGlobalActivities">
+	</xs:element>
+	<xs:element name="instanceGetGlobalActivitiesResponse"
+		type="tns:instanceGetGlobalActivitiesResponse">
+	</xs:element>
+	<xs:element name="instanceGetLastConsult"
+		type="tns:instanceGetLastConsult">
+	</xs:element>
+	<xs:element name="instanceGetLastConsultResponse"
+		type="tns:instanceGetLastConsultResponse">
+	</xs:element>
+	<xs:element name="instanceGetNotes" type="tns:instanceGetNotes"></xs:element>
+	<xs:element name="instanceGetNotesResponse"
+		type="tns:instanceGetNotesResponse">
+	</xs:element>
+	<xs:element name="instanceGetParticipants"
+		type="tns:instanceGetParticipants">
+	</xs:element>
+	<xs:element name="instanceGetParticipantsResponse"
+		type="tns:instanceGetParticipantsResponse">
+	</xs:element>
+	<xs:element name="instanceGetProcessId"
+		type="tns:instanceGetProcessId">
+	</xs:element>
+	<xs:element name="instanceGetProcessIdResponse"
+		type="tns:instanceGetProcessIdResponse">
+	</xs:element>
+	<xs:element name="instanceGetVariable"
+		type="tns:instanceGetVariable">
+	</xs:element>
+	<xs:element name="instanceGetVariableResponse"
+		type="tns:instanceGetVariableResponse">
+	</xs:element>
+	<xs:element name="instanceGrabbableFrom"
+		type="tns:instanceGrabbableFrom">
+	</xs:element>
+	<xs:element name="instanceGrabbableFromResponse"
+		type="tns:instanceGrabbableFromResponse">
+	</xs:element>
+	<xs:element name="instanceHasAttachments"
+		type="tns:instanceHasAttachments">
+	</xs:element>
+	<xs:element name="instanceHasAttachmentsResponse"
+		type="tns:instanceHasAttachmentsResponse">
+	</xs:element>
+	<xs:element name="instanceHasNotes" type="tns:instanceHasNotes"></xs:element>
+	<xs:element name="instanceHasNotesResponse"
+		type="tns:instanceHasNotesResponse">
+	</xs:element>
+	<xs:element name="instanceReassign" type="tns:instanceReassign"></xs:element>
+	<xs:element name="instanceReassignResponse"
+		type="tns:instanceReassignResponse">
+	</xs:element>
+	<xs:element name="instanceRefresh" type="tns:instanceRefresh"></xs:element>
+	<xs:element name="instanceRefreshResponse"
+		type="tns:instanceRefreshResponse">
+	</xs:element>
+	<xs:element name="instancesAbort" type="tns:instancesAbort"></xs:element>
+	<xs:element name="instancesAbortResponse"
+		type="tns:instancesAbortResponse">
+	</xs:element>
+	<xs:element name="instancesAddBookmark"
+		type="tns:instancesAddBookmark">
+	</xs:element>
+	<xs:element name="instancesAddBookmarkResponse"
+		type="tns:instancesAddBookmarkResponse">
+	</xs:element>
+	<xs:element name="instancesAddConsult"
+		type="tns:instancesAddConsult">
+	</xs:element>
+	<xs:element name="instancesAddConsultResponse"
+		type="tns:instancesAddConsultResponse">
+	</xs:element>
+	<xs:element name="instancesAddNote" type="tns:instancesAddNote"></xs:element>
+	<xs:element name="instancesAddNoteResponse"
+		type="tns:instancesAddNoteResponse">
+	</xs:element>
+	<xs:element name="instancesGetBookmarks"
+		type="tns:instancesGetBookmarks">
+	</xs:element>
+	<xs:element name="instancesGetBookmarksResponse"
+		type="tns:instancesGetBookmarksResponse">
+	</xs:element>
+	<xs:element name="instancesGetConsults"
+		type="tns:instancesGetConsults">
+	</xs:element>
+	<xs:element name="instancesGetConsultsResponse"
+		type="tns:instancesGetConsultsResponse">
+	</xs:element>
+	<xs:element name="instancesGetTargetActivities"
+		type="tns:instancesGetTargetActivities">
+	</xs:element>
+	<xs:element name="instancesGetTargetActivitiesResponse"
+		type="tns:instancesGetTargetActivitiesResponse">
+	</xs:element>
+	<xs:element name="instancesGrab" type="tns:instancesGrab"></xs:element>
+	<xs:element name="instancesGrabResponse"
+		type="tns:instancesGrabResponse">
+	</xs:element>
+	<xs:element name="instancesRemoveBookmark"
+		type="tns:instancesRemoveBookmark">
+	</xs:element>
+	<xs:element name="instancesRemoveBookmarkResponse"
+		type="tns:instancesRemoveBookmarkResponse">
+	</xs:element>
+	<xs:element name="instancesResume" type="tns:instancesResume"></xs:element>
+	<xs:element name="instancesResumeResponse"
+		type="tns:instancesResumeResponse">
+	</xs:element>
+	<xs:element name="instancesSelect" type="tns:instancesSelect"></xs:element>
+	<xs:element name="instancesSelectResponse"
+		type="tns:instancesSelectResponse">
+	</xs:element>
+	<xs:element name="instancesSend" type="tns:instancesSend"></xs:element>
+	<xs:element name="instancesSendBack" type="tns:instancesSendBack"></xs:element>
+	<xs:element name="instancesSendBackResponse"
+		type="tns:instancesSendBackResponse">
+	</xs:element>
+	<xs:element name="instancesSendResponse"
+		type="tns:instancesSendResponse">
+	</xs:element>
+	<xs:element name="instancesSendTo" type="tns:instancesSendTo"></xs:element>
+	<xs:element name="instancesSendToResponse"
+		type="tns:instancesSendToResponse">
+	</xs:element>
+	<xs:element name="instancesSuspend" type="tns:instancesSuspend"></xs:element>
+	<xs:element name="instancesSuspendResponse"
+		type="tns:instancesSuspendResponse">
+	</xs:element>
+	<xs:element name="instancesUngrab" type="tns:instancesUngrab"></xs:element>
+	<xs:element name="instancesUngrabResponse"
+		type="tns:instancesUngrabResponse">
+	</xs:element>
+	<xs:element name="instancesUnselect" type="tns:instancesUnselect"></xs:element>
+	<xs:element name="instancesUnselectResponse"
+		type="tns:instancesUnselectResponse">
+	</xs:element>
+	<xs:element name="noteGet" type="tns:noteGet"></xs:element>
+	<xs:element name="noteGetResponse" type="tns:noteGetResponse"></xs:element>
+	<xs:element name="organization" type="tns:organization"></xs:element>
+	<xs:element name="organizationResponse"
+		type="tns:organizationResponse">
+	</xs:element>
+	<xs:element name="participantChangePasswordEnabled"
+		type="tns:participantChangePasswordEnabled">
+	</xs:element>
+	<xs:element name="participantChangePasswordEnabledResponse"
+		type="tns:participantChangePasswordEnabledResponse">
+	</xs:element>
+	<xs:element name="participantCurrent"
+		type="tns:participantCurrent">
+	</xs:element>
+	<xs:element name="participantCurrentResponse"
+		type="tns:participantCurrentResponse">
+	</xs:element>
+	<xs:element name="participantEnableMailReception"
+		type="tns:participantEnableMailReception">
+	</xs:element>
+	<xs:element name="participantEnableMailReceptionResponse"
+		type="tns:participantEnableMailReceptionResponse">
+	</xs:element>
+	<xs:element name="participantFind" type="tns:participantFind"></xs:element>
+	<xs:element name="participantFindByName"
+		type="tns:participantFindByName">
+	</xs:element>
+	<xs:element name="participantFindByNameResponse"
+		type="tns:participantFindByNameResponse">
+	</xs:element>
+	<xs:element name="participantFindResponse"
+		type="tns:participantFindResponse">
+	</xs:element>
+	<xs:element name="participantLocale" type="tns:participantLocale"></xs:element>
+	<xs:element name="participantLocaleResponse"
+		type="tns:participantLocaleResponse">
+	</xs:element>
+	<xs:element name="participantRetrieveProperty"
+		type="tns:participantRetrieveProperty">
+	</xs:element>
+	<xs:element name="participantRetrievePropertyResponse"
+		type="tns:participantRetrievePropertyResponse">
+	</xs:element>
+	<xs:element name="participantStoreProperty"
+		type="tns:participantStoreProperty">
+	</xs:element>
+	<xs:element name="participantStorePropertyResponse"
+		type="tns:participantStorePropertyResponse">
+	</xs:element>
+	<xs:element name="participantTimeZone"
+		type="tns:participantTimeZone">
+	</xs:element>
+	<xs:element name="participantTimeZoneResponse"
+		type="tns:participantTimeZoneResponse">
+	</xs:element>
+	<xs:element name="participantUpdateLocale"
+		type="tns:participantUpdateLocale">
+	</xs:element>
+	<xs:element name="participantUpdateLocaleResponse"
+		type="tns:participantUpdateLocaleResponse">
+	</xs:element>
+	<xs:element name="participantUpdatePassword"
+		type="tns:participantUpdatePassword">
+	</xs:element>
+	<xs:element name="participantUpdatePasswordResponse"
+		type="tns:participantUpdatePasswordResponse">
+	</xs:element>
+	<xs:element name="participantUpdateTimeZone"
+		type="tns:participantUpdateTimeZone">
+	</xs:element>
+	<xs:element name="participantUpdateTimeZoneResponse"
+		type="tns:participantUpdateTimeZoneResponse">
+	</xs:element>
+	<xs:element name="presentationGet" type="tns:presentationGet"></xs:element>
+	<xs:element name="presentationGetDefaultByType"
+		type="tns:presentationGetDefaultByType">
+	</xs:element>
+	<xs:element name="presentationGetDefaultByTypeResponse"
+		type="tns:presentationGetDefaultByTypeResponse">
+	</xs:element>
+	<xs:element name="presentationGetDefaultByViewType"
+		type="tns:presentationGetDefaultByViewType">
+	</xs:element>
+	<xs:element name="presentationGetDefaultByViewTypeResponse"
+		type="tns:presentationGetDefaultByViewTypeResponse">
+	</xs:element>
+	<xs:element name="presentationGetResponse"
+		type="tns:presentationGetResponse">
+	</xs:element>
+	<xs:element name="presentationsGetIds"
+		type="tns:presentationsGetIds">
+	</xs:element>
+	<xs:element name="presentationsGetIdsResponse"
+		type="tns:presentationsGetIdsResponse">
+	</xs:element>
+	<xs:element name="processCreateInstance"
+		type="tns:processCreateInstance">
+	</xs:element>
+	<xs:element name="processCreateInstanceResponse"
+		type="tns:processCreateInstanceResponse">
+	</xs:element>
+	<xs:element name="processGet" type="tns:processGet"></xs:element>
+	<xs:element name="processGetActiveVersion"
+		type="tns:processGetActiveVersion">
+	</xs:element>
+	<xs:element name="processGetActiveVersionResponse"
+		type="tns:processGetActiveVersionResponse">
+	</xs:element>
+	<xs:element name="processGetAllVersions"
+		type="tns:processGetAllVersions">
+	</xs:element>
+	<xs:element name="processGetAllVersionsResponse"
+		type="tns:processGetAllVersionsResponse">
+	</xs:element>
+	<xs:element name="processGetDocumentation"
+		type="tns:processGetDocumentation">
+	</xs:element>
+	<xs:element name="processGetDocumentationResponse"
+		type="tns:processGetDocumentationResponse">
+	</xs:element>
+	<xs:element name="processGetId" type="tns:processGetId"></xs:element>
+	<xs:element name="processGetIdResponse"
+		type="tns:processGetIdResponse">
+	</xs:element>
+	<xs:element name="processGetInstance"
+		type="tns:processGetInstance">
+	</xs:element>
+	<xs:element name="processGetInstanceByCorrelation"
+		type="tns:processGetInstanceByCorrelation">
+	</xs:element>
+	<xs:element name="processGetInstanceByCorrelationResponse"
+		type="tns:processGetInstanceByCorrelationResponse">
+	</xs:element>
+	<xs:element name="processGetInstanceInActivity"
+		type="tns:processGetInstanceInActivity">
+	</xs:element>
+	<xs:element name="processGetInstanceInActivityResponse"
+		type="tns:processGetInstanceInActivityResponse">
+	</xs:element>
+	<xs:element name="processGetInstanceResponse"
+		type="tns:processGetInstanceResponse">
+	</xs:element>
+	<xs:element name="processGetInstances"
+		type="tns:processGetInstances">
+	</xs:element>
+	<xs:element name="processGetInstancesResponse"
+		type="tns:processGetInstancesResponse">
+	</xs:element>
+	<xs:element name="processGetResponse"
+		type="tns:processGetResponse">
+	</xs:element>
+	<xs:element name="processGetVisibleActivities"
+		type="tns:processGetVisibleActivities">
+	</xs:element>
+	<xs:element name="processGetVisibleActivitiesResponse"
+		type="tns:processGetVisibleActivitiesResponse">
+	</xs:element>
+	<xs:element name="processRun" type="tns:processRun"></xs:element>
+	<xs:element name="processRunResponse"
+		type="tns:processRunResponse">
+	</xs:element>
+	<xs:element name="processSendNotification"
+		type="tns:processSendNotification">
+	</xs:element>
+	<xs:element name="processSendNotificationResponse"
+		type="tns:processSendNotificationResponse">
+	</xs:element>
+	<xs:element name="processSendRelatedNotification"
+		type="tns:processSendRelatedNotification">
+	</xs:element>
+	<xs:element name="processSendRelatedNotificationResponse"
+		type="tns:processSendRelatedNotificationResponse">
+	</xs:element>
+	<xs:element name="processesGet" type="tns:processesGet"></xs:element>
+	<xs:element name="processesGetAllVersions"
+		type="tns:processesGetAllVersions">
+	</xs:element>
+	<xs:element name="processesGetAllVersionsResponse"
+		type="tns:processesGetAllVersionsResponse">
+	</xs:element>
+	<xs:element name="processesGetApplications"
+		type="tns:processesGetApplications">
+	</xs:element>
+	<xs:element name="processesGetApplicationsResponse"
+		type="tns:processesGetApplicationsResponse">
+	</xs:element>
+	<xs:element name="processesGetGlobalActivities"
+		type="tns:processesGetGlobalActivities">
+	</xs:element>
+	<xs:element name="processesGetGlobalActivitiesByTaskType"
+		type="tns:processesGetGlobalActivitiesByTaskType">
+	</xs:element>
+	<xs:element name="processesGetGlobalActivitiesByTaskTypeResponse"
+		type="tns:processesGetGlobalActivitiesByTaskTypeResponse">
+	</xs:element>
+	<xs:element name="processesGetGlobalActivitiesResponse"
+		type="tns:processesGetGlobalActivitiesResponse">
+	</xs:element>
+	<xs:element name="processesGetIds" type="tns:processesGetIds"></xs:element>
+	<xs:element name="processesGetIdsResponse"
+		type="tns:processesGetIdsResponse">
+	</xs:element>
+	<xs:element name="processesGetInstancesByFilter"
+		type="tns:processesGetInstancesByFilter">
+	</xs:element>
+	<xs:element name="processesGetInstancesByFilterResponse"
+		type="tns:processesGetInstancesByFilterResponse">
+	</xs:element>
+	<xs:element name="processesGetResponse"
+		type="tns:processesGetResponse">
+	</xs:element>
+	<xs:element name="taskCanBeProcessed"
+		type="tns:taskCanBeProcessed">
+	</xs:element>
+	<xs:element name="taskCanBeProcessedResponse"
+		type="tns:taskCanBeProcessedResponse">
+	</xs:element>
+	<xs:element name="taskCanBeSelected" type="tns:taskCanBeSelected"></xs:element>
+	<xs:element name="taskCanBeSelectedResponse"
+		type="tns:taskCanBeSelectedResponse">
+	</xs:element>
+	<xs:element name="taskCanBeUnselected"
+		type="tns:taskCanBeUnselected">
+	</xs:element>
+	<xs:element name="taskCanBeUnselectedResponse"
+		type="tns:taskCanBeUnselectedResponse">
+	</xs:element>
+	<xs:element name="tasksSelect" type="tns:tasksSelect"></xs:element>
+	<xs:element name="tasksSelectResponse"
+		type="tns:tasksSelectResponse">
+	</xs:element>
+	<xs:element name="tasksUnselect" type="tns:tasksUnselect"></xs:element>
+	<xs:element name="tasksUnselectResponse"
+		type="tns:tasksUnselectResponse">
+	</xs:element>
+	<xs:element name="variableGet" type="tns:variableGet"></xs:element>
+	<xs:element name="variableGetResponse"
+		type="tns:variableGetResponse">
+	</xs:element>
+	<xs:element name="variablesGet" type="tns:variablesGet"></xs:element>
+	<xs:element name="variablesGetResponse"
+		type="tns:variablesGetResponse">
+	</xs:element>
+	<xs:element name="viewGet" type="tns:viewGet"></xs:element>
+	<xs:element name="viewGetApplications"
+		type="tns:viewGetApplications">
+	</xs:element>
+	<xs:element name="viewGetApplicationsResponse"
+		type="tns:viewGetApplicationsResponse">
+	</xs:element>
+	<xs:element name="viewGetChildren" type="tns:viewGetChildren"></xs:element>
+	<xs:element name="viewGetChildrenResponse"
+		type="tns:viewGetChildrenResponse">
+	</xs:element>
+	<xs:element name="viewGetInstances" type="tns:viewGetInstances"></xs:element>
+	<xs:element name="viewGetInstancesResponse"
+		type="tns:viewGetInstancesResponse">
+	</xs:element>
+	<xs:element name="viewGetParent" type="tns:viewGetParent"></xs:element>
+	<xs:element name="viewGetParentId" type="tns:viewGetParentId"></xs:element>
+	<xs:element name="viewGetParentIdResponse"
+		type="tns:viewGetParentIdResponse">
+	</xs:element>
+	<xs:element name="viewGetParentResponse"
+		type="tns:viewGetParentResponse">
+	</xs:element>
+	<xs:element name="viewGetResponse" type="tns:viewGetResponse"></xs:element>
+	<xs:element name="viewHasNewInstances"
+		type="tns:viewHasNewInstances">
+	</xs:element>
+	<xs:element name="viewHasNewInstancesResponse"
+		type="tns:viewHasNewInstancesResponse">
+	</xs:element>
+	<xs:element name="viewsGetIds" type="tns:viewsGetIds"></xs:element>
+	<xs:element name="viewsGetIdsResponse"
+		type="tns:viewsGetIdsResponse">
+	</xs:element>
+	<xs:element name="viewsHaveNewInstances"
+		type="tns:viewsHaveNewInstances">
+	</xs:element>
+	<xs:element name="viewsHaveNewInstancesResponse"
+		type="tns:viewsHaveNewInstancesResponse">
+	</xs:element>
+	<xs:element name="viewsSetDefaultOrder"
+		type="tns:viewsSetDefaultOrder">
+	</xs:element>
+	<xs:element name="viewsSetDefaultOrderResponse"
+		type="tns:viewsSetDefaultOrderResponse">
+	</xs:element>
+	<xs:complexType name="instanceGetVariable">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="variableId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetVariableResponse">
+		<xs:sequence>
+			<xs:element name="variableValue" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OperationException">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetNotes">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetNotesResponse">
+		<xs:sequence>
+			<xs:element name="notes" type="tns:noteBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="noteBeanList">
+		<xs:sequence>
+			<xs:element name="notes" type="tns:noteBean" nillable="true"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="noteBean">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="content" type="xs:anyType"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="instance" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="participant" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processSendRelatedNotification">
+		<xs:sequence>
+			<xs:element name="targetInstanceOrProcessId"
+				type="xs:string" minOccurs="0">
+			</xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="targetArgumentsSetName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="sourceInstanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="argumentsBean">
+		<xs:sequence>
+			<xs:element name="arguments">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="entry" minOccurs="0"
+							maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="key" minOccurs="0"
+										type="xs:string">
+									</xs:element>
+									<xs:element name="value"
+										minOccurs="0" type="xs:string">
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processSendRelatedNotificationResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityAbortTask">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="taskIn" type="xs:int"></xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityAbortTaskResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetParentId">
+		<xs:sequence>
+			<xs:element name="viewId" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetParentIdResponse">
+		<xs:sequence>
+			<xs:element name="viewId" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeProcessed">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeProcessedResponse">
+		<xs:sequence>
+			<xs:element name="canBeProcessed" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="variablesGet">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="variablesGetResponse">
+		<xs:sequence>
+			<xs:element name="variables"
+				type="tns:varDefinitionBeanList" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="varDefinitionBeanList">
+		<xs:sequence>
+			<xs:element name="variables" type="tns:varDefinitionBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="varDefinitionBean">
+		<xs:sequence>
+			<xs:element name="fractionSize" type="xs:int"></xs:element>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="isExternal" type="xs:boolean"></xs:element>
+			<xs:element name="kind" type="xs:int"></xs:element>
+			<xs:element name="labels">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="entry" minOccurs="0"
+							maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="key" minOccurs="0"
+										type="xs:string">
+									</xs:element>
+									<xs:element name="value"
+										minOccurs="0" type="xs:string">
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="mask" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="size" type="xs:int"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeAborted">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeAbortedResponse">
+		<xs:sequence>
+			<xs:element name="canBeAborted" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewsGetIds">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewsGetIdsResponse">
+		<xs:sequence>
+			<xs:element name="viewIds" type="tns:stringListBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="stringListBean">
+		<xs:sequence>
+			<xs:element name="strings" type="xs:string" nillable="true"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSendTo">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="participant" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceActivityPairSetBean">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairBean" nillable="true" minOccurs="0"
+				maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceActivityPairBean">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSendToResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantUpdatePassword">
+		<xs:sequence>
+			<xs:element name="oldPassword" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="newPassword" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantUpdatePasswordResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantStoreProperty">
+		<xs:sequence>
+			<xs:element name="category" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="key" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="value" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantStorePropertyResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetGlobalActivities">
+		<xs:sequence>
+			<xs:element name="processes" type="tns:processIdSetBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processIdSetBean">
+		<xs:sequence>
+			<xs:element name="processIds" type="xs:string"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetGlobalActivitiesResponse">
+		<xs:sequence>
+			<xs:element name="globalActivities"
+				type="tns:activityBeanList" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityBeanList">
+		<xs:sequence>
+			<xs:element name="activities" type="tns:activityBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityBean">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="isAbortEnable" type="xs:boolean"></xs:element>
+			<xs:element name="isActive" type="xs:boolean"></xs:element>
+			<xs:element name="isAutoCompleteEnable" type="xs:boolean"></xs:element>
+			<xs:element name="isReassignEnable" type="xs:boolean"></xs:element>
+			<xs:element name="isSelectEnabled" type="xs:boolean"></xs:element>
+			<xs:element name="isSuspendEnabled" type="xs:boolean"></xs:element>
+			<xs:element name="isUserSelectsTransitionEnabled"
+				type="xs:boolean">
+			</xs:element>
+			<xs:element name="labels" type="tns:localeStringMapBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="role" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="sourceActivitiesForGrab"
+				type="tns:activityBean" nillable="true" minOccurs="0"
+				maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="tasks" type="tns:taskBean" nillable="true"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="type" type="tns:activityType"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="localeStringMapBean">
+		<xs:sequence>
+			<xs:element name="labels">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="entry" minOccurs="0"
+							maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="key" minOccurs="0"
+										type="tns:localeBean">
+									</xs:element>
+									<xs:element name="value"
+										minOccurs="0" type="xs:string">
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="localeBean">
+		<xs:sequence>
+			<xs:element name="country" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="language" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="variant" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="taskBean">
+		<xs:sequence>
+			<xs:element name="arguments" type="tns:taskArgumentBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="description" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="in" type="xs:int"></xs:element>
+			<xs:element name="isExternal" type="xs:boolean"></xs:element>
+			<xs:element name="isMandatory" type="xs:boolean"></xs:element>
+			<xs:element name="isReadOnly" type="xs:boolean"></xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="type" type="xs:int"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="taskArgumentBean">
+		<xs:sequence>
+			<xs:element name="description" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="isIn" type="xs:boolean"></xs:element>
+			<xs:element name="isOut" type="xs:boolean"></xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="type" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processCreateInstance">
+		<xs:sequence>
+			<xs:element name="targetProcessId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="argumentsSetName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processCreateInstanceResponse">
+		<xs:sequence>
+			<xs:element name="instance" type="tns:instanceInfoBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceInfoBean">
+		<xs:sequence>
+			<xs:element name="activityDeadline" type="xs:dateTime"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="author" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="creationTime" type="xs:dateTime"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="description" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="numberOfThreads" type="xs:int"></xs:element>
+			<xs:element name="parentThread" type="xs:int"></xs:element>
+			<xs:element name="participant" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="priority" type="xs:int"></xs:element>
+			<xs:element name="process" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="processDeadline" type="xs:dateTime"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="receptionTime" type="xs:dateTime"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="role" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="state" type="xs:int"></xs:element>
+			<xs:element name="taskCount" type="xs:int"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantCurrent">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantCurrentResponse">
+		<xs:sequence>
+			<xs:element name="currentParticipant"
+				type="tns:participantBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantBean">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="lastName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="mail" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="organizationalUnit" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="roles" type="xs:string" nillable="true"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesRemoveBookmark">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesRemoveBookmarkResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGet">
+		<xs:sequence>
+			<xs:element name="viewId" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetResponse">
+		<xs:sequence>
+			<xs:element name="view" type="tns:viewBean" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewBean">
+		<xs:sequence>
+			<xs:element name="assignedProcesses" type="xs:string"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="assignedRoles" type="xs:string"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="isCustom" type="xs:boolean"></xs:element>
+			<xs:element name="isHidden" type="xs:boolean"></xs:element>
+			<xs:element name="isReadOnly" type="xs:boolean"></xs:element>
+			<xs:element name="labels" type="tns:localeStringMapBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="owner" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="parentId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="presentation" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="presentationType"
+				type="tns:presentationType" minOccurs="0">
+			</xs:element>
+			<xs:element name="type" type="tns:viewType" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeSelected">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeSelectedResponse">
+		<xs:sequence>
+			<xs:element name="canBeSelected" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetInstancesByFilter">
+		<xs:sequence>
+			<xs:element name="processes" type="tns:processIdSetBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="filter" type="tns:filterBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="filterBean">
+		<xs:sequence>
+			<xs:element name="attributes" type="tns:filterAttributeBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="description" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="isCaseSensitive" type="xs:boolean"></xs:element>
+			<xs:element name="isMatchAll" type="xs:boolean"></xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="ordering" type="tns:orderingBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="searchScope" type="tns:searchScopeBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="filterAttributeBean">
+		<xs:sequence>
+			<xs:element name="comparison" type="tns:comparison"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="isParametric" type="xs:boolean"></xs:element>
+			<xs:element name="kind" type="xs:int"></xs:element>
+			<xs:element name="value" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="variableId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="orderingBean">
+		<xs:sequence>
+			<xs:element name="entries" type="tns:orderingEntryBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="orderingEntryBean">
+		<xs:sequence>
+			<xs:element name="isAscending" type="xs:boolean"></xs:element>
+			<xs:element name="variableId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="searchScopeBean">
+		<xs:sequence>
+			<xs:element name="participantScope"
+				type="tns:participantScope" minOccurs="0">
+			</xs:element>
+			<xs:element name="statusScope" type="tns:statusScope"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetInstancesByFilterResponse">
+		<xs:sequence>
+			<xs:element name="instances" type="tns:instanceInfoBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceInfoBeanList">
+		<xs:sequence>
+			<xs:element name="instances" type="tns:instanceInfoBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceReassign">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="participant" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceReassignResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSelect">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSelectResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesGetBookmarks">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesGetBookmarksResponse">
+		<xs:sequence>
+			<xs:element name="instanceIds" type="tns:stringListBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="taskCanBeUnselected">
+		<xs:sequence>
+			<xs:element name="taskNumber" type="xs:int"></xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="taskCanBeUnselectedResponse">
+		<xs:sequence>
+			<xs:element name="canBeUnselected" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetDocumentation">
+		<xs:sequence>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="locale" type="tns:localeBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetDocumentationResponse">
+		<xs:sequence>
+			<xs:element name="documentationPath" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presentationGetDefaultByViewType">
+		<xs:sequence>
+			<xs:element name="viewType" type="tns:viewType"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presentationGetDefaultByViewTypeResponse">
+		<xs:sequence>
+			<xs:element name="presentation" type="tns:presentationBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presentationBean">
+		<xs:sequence>
+			<xs:element name="columns" type="tns:columnBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="isReadOnly" type="xs:boolean"></xs:element>
+			<xs:element name="ordering" type="tns:orderingBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="owner" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="type" type="tns:presentationType"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="columnBean">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="size" type="xs:int"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presentationsGetIds">
+		<xs:sequence>
+			<xs:element name="presentationType"
+				type="tns:presentationType" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presentationsGetIdsResponse">
+		<xs:sequence>
+			<xs:element name="presentationIds" type="tns:stringListBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewsHaveNewInstances">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewsHaveNewInstancesResponse">
+		<xs:sequence>
+			<xs:element name="haveNewInstances" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityAbort">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityAbortResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="noteGet">
+		<xs:sequence>
+			<xs:element name="noteId" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="noteGetResponse">
+		<xs:sequence>
+			<xs:element name="note" type="tns:noteBean" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesAbort">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesAbortResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceHasAttachments">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceHasAttachmentsResponse">
+		<xs:sequence>
+			<xs:element name="hasAttachments" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="taskCanBeProcessed">
+		<xs:sequence>
+			<xs:element name="taskNumber" type="xs:int"></xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="taskCanBeProcessedResponse">
+		<xs:sequence>
+			<xs:element name="canBeProcessed" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetId">
+		<xs:sequence>
+			<xs:element name="processIn" type="xs:int"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetIdResponse">
+		<xs:sequence>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityCommit">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityCommitResponse">
+		<xs:sequence>
+			<xs:element name="instance" type="tns:instanceInfoBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetInstance">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetInstanceResponse">
+		<xs:sequence>
+			<xs:element name="instance" type="tns:instanceInfoBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetGlobalActivities">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetGlobalActivitiesResponse">
+		<xs:sequence>
+			<xs:element name="activit" type="tns:activityBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesUnselect">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesUnselectResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantTimeZone">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantTimeZoneResponse">
+		<xs:sequence>
+			<xs:element name="timeZone" type="tns:timeZoneBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="timeZoneBean">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="rawOffset" type="xs:int"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSuspend">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSuspendResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGet">
+		<xs:sequence>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetResponse">
+		<xs:sequence>
+			<xs:element name="process" type="tns:processBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processBean">
+		<xs:sequence>
+			<xs:element name="activities" type="tns:activityBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="beginArgumentSets"
+				type="tns:argumentSetBean" nillable="true" minOccurs="0"
+				maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="deployedEngine" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="id" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="isActive" type="xs:boolean"></xs:element>
+			<xs:element name="isAutomatic" type="xs:boolean"></xs:element>
+			<xs:element name="labels" type="tns:localeStringMapBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="measurements" type="tns:activityBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="organizationUnit" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="roles" type="xs:string" nillable="true"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="variables" type="tns:varDefinitionBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="version" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="argumentSetBean">
+		<xs:sequence>
+			<xs:element name="arguments" type="tns:argumentBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="argumentBean">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="type" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetIds">
+		<xs:sequence>
+			<xs:element name="onlyActiveProcess" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetIdsResponse">
+		<xs:sequence>
+			<xs:element name="processIds" type="tns:stringListBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetProcessId">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetProcessIdResponse">
+		<xs:sequence>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetActiveVersion">
+		<xs:sequence>
+			<xs:element name="process" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetActiveVersionResponse">
+		<xs:sequence>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGrabbableFrom">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGrabbableFromResponse">
+		<xs:sequence>
+			<xs:element name="activities" type="tns:activityBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeSentBack">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeSentBackResponse">
+		<xs:sequence>
+			<xs:element name="canBeSentBack" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSend">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSendResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presentationGetDefaultByType">
+		<xs:sequence>
+			<xs:element name="presentationType"
+				type="tns:presentationType" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presentationGetDefaultByTypeResponse">
+		<xs:sequence>
+			<xs:element name="presentation" type="tns:presentationBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tasksUnselect">
+		<xs:sequence>
+			<xs:element name="taskNumbers" type="xs:int" minOccurs="0"
+				maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tasksUnselectResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeReassignedToPeer">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeReassignedToPeerResponse">
+		<xs:sequence>
+			<xs:element name="canBeReassignedToPeer"
+				type="xs:boolean">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetParticipants">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="participantFor" type="tns:participantFor"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetParticipantsResponse">
+		<xs:sequence>
+			<xs:element name="participants"
+				type="tns:participantBeanList" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantBeanList">
+		<xs:sequence>
+			<xs:element name="participants" type="tns:participantBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="variableGet">
+		<xs:sequence>
+			<xs:element name="variableId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="variableGetResponse">
+		<xs:sequence>
+			<xs:element name="variable" type="tns:varDefinitionBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceHasNotes">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceHasNotesResponse">
+		<xs:sequence>
+			<xs:element name="hasNotes" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantChangePasswordEnabled">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantChangePasswordEnabledResponse">
+		<xs:sequence>
+			<xs:element name="changePasswordEnabled"
+				type="xs:boolean">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantFindByName">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantFindByNameResponse">
+		<xs:sequence>
+			<xs:element name="participantList"
+				type="tns:participantBeanList" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetAllVersions">
+		<xs:sequence>
+			<xs:element name="process" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetAllVersionsResponse">
+		<xs:sequence>
+			<xs:element name="processIds" type="tns:stringListBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityExecuteApplication">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityExecuteApplicationResponse">
+		<xs:sequence>
+			<xs:element name="instance" type="tns:instanceInfoBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityExecute">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityExecuteResponse">
+		<xs:sequence>
+			<xs:element name="instance" type="tns:instanceInfoBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewHasNewInstances">
+		<xs:sequence>
+			<xs:element name="viewId" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewHasNewInstancesResponse">
+		<xs:sequence>
+			<xs:element name="hasNewInstances" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeEscalated">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeEscalatedResponse">
+		<xs:sequence>
+			<xs:element name="canBeEscalated" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetInstanceByCorrelation">
+		<xs:sequence>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="correlationName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="correlationValues" type="xs:string"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetInstanceByCorrelationResponse">
+		<xs:sequence>
+			<xs:element name="instance" type="tns:instanceInfoBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetInstances">
+		<xs:sequence>
+			<xs:element name="process" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetInstancesResponse">
+		<xs:sequence>
+			<xs:element name="instances" type="tns:instanceInfoBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesGetTargetActivities">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesGetTargetActivitiesResponse">
+		<xs:sequence>
+			<xs:element name="activities" type="xs:string" minOccurs="0"
+				maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetLastConsult">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetLastConsultResponse">
+		<xs:sequence>
+			<xs:element name="consult" type="tns:consultBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="consultBean">
+		<xs:sequence>
+			<xs:element name="participant" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="remarkId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="type" type="xs:int"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityExecuteTask">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="taskToExecute" type="xs:int"></xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityExecuteTaskResponse">
+		<xs:sequence>
+			<xs:element name="instance" type="tns:instanceInfoBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="organization">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="organizationResponse">
+		<xs:sequence>
+			<xs:element name="organization" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetApplications">
+		<xs:sequence>
+			<xs:element name="processes" type="tns:processIdSetBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetApplicationsResponse">
+		<xs:sequence>
+			<xs:element name="globalActivities"
+				type="tns:activityBeanList" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantUpdateTimeZone">
+		<xs:sequence>
+			<xs:element name="timeZone" type="tns:timeZoneBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantUpdateTimeZoneResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetInstances">
+		<xs:sequence>
+			<xs:element name="viewId" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetInstancesResponse">
+		<xs:sequence>
+			<xs:element name="instances" type="tns:instanceInfoBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityPrepare">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityPrepareResponse">
+		<xs:sequence>
+			<xs:element name="outArguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantRetrieveProperty">
+		<xs:sequence>
+			<xs:element name="category" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="key" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantRetrievePropertyResponse">
+		<xs:sequence>
+			<xs:element name="property" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesAddConsult">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+			<xs:element name="consult" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="toParticipant" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesAddConsultResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetEvents">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceGetEventsResponse">
+		<xs:sequence>
+			<xs:element name="events" type="tns:instanceEventBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceEventBeanList">
+		<xs:sequence>
+			<xs:element name="events" type="tns:instanceEventBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceEventBean">
+		<xs:sequence>
+			<xs:element name="activationTime" type="xs:dateTime"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="activity" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="businessVariablesIds" type="xs:string"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="businessVariablesValues" type="xs:string"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="category" type="xs:int"></xs:element>
+			<xs:element name="data" type="xs:string" minOccurs="0"></xs:element>
+			<xs:element name="id" type="xs:int"></xs:element>
+			<xs:element name="instanceIn" type="xs:int"></xs:element>
+			<xs:element name="participant" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="processIn" type="xs:int"></xs:element>
+			<xs:element name="receiveTime" type="xs:dateTime"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="threadIn" type="xs:int"></xs:element>
+			<xs:element name="timeStamp" type="xs:dateTime"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="type" type="xs:int"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeUngrabbed">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeUngrabbedResponse">
+		<xs:sequence>
+			<xs:element name="canBeUngrabbed" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityGetDocumentation">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="locale" type="tns:localeBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityGetDocumentationResponse">
+		<xs:sequence>
+			<xs:element name="documentationPath" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesUngrab">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesUngrabResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeDelegated">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeDelegatedResponse">
+		<xs:sequence>
+			<xs:element name="canBeDelegated" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeSuspended">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeSuspendedResponse">
+		<xs:sequence>
+			<xs:element name="canBeSuspended" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeReassigned">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeReassignedResponse">
+		<xs:sequence>
+			<xs:element name="canBeReassigned" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetApplications">
+		<xs:sequence>
+			<xs:element name="applicationViewId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetApplicationsResponse">
+		<xs:sequence>
+			<xs:element name="activities" type="tns:activityBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tasksSelect">
+		<xs:sequence>
+			<xs:element name="taskNumbers" type="xs:int" minOccurs="0"
+				maxOccurs="unbounded">
+			</xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tasksSelectResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSendBack">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+			<xs:element name="skip" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesSendBackResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantLocale">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantLocaleResponse">
+		<xs:sequence>
+			<xs:element name="locale" type="tns:localeBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetParent">
+		<xs:sequence>
+			<xs:element name="viewId" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetParentResponse">
+		<xs:sequence>
+			<xs:element name="view" type="tns:viewBean" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processSendNotification">
+		<xs:sequence>
+			<xs:element name="targetInstanceOrProcessId"
+				type="xs:string" minOccurs="0">
+			</xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="targetArgumentsSetName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processSendNotificationResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantFind">
+		<xs:sequence>
+			<xs:element name="uid" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantFindResponse">
+		<xs:sequence>
+			<xs:element name="participant" type="tns:participantBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGet">
+		<xs:sequence>
+			<xs:element name="onlyActiveProcess" type="xs:boolean"></xs:element>
+			<xs:element name="force" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetResponse">
+		<xs:sequence>
+			<xs:element name="processes" type="tns:processBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processBeanList">
+		<xs:sequence>
+			<xs:element name="processes" type="tns:processBean"
+				nillable="true" minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetChildren">
+		<xs:sequence>
+			<xs:element name="viewId" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewGetChildrenResponse">
+		<xs:sequence>
+			<xs:element name="instanceIds" type="tns:viewIdListBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewIdListBean">
+		<xs:sequence>
+			<xs:element name="viewIds" type="xs:string" nillable="true"
+				minOccurs="0" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presentationGet">
+		<xs:sequence>
+			<xs:element name="presentationId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="presentationGetResponse">
+		<xs:sequence>
+			<xs:element name="presentation" type="tns:presentationBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetInstanceInActivity">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetInstanceInActivityResponse">
+		<xs:sequence>
+			<xs:element name="instance" type="tns:instanceInfoBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesResume">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesResumeResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantUpdateLocale">
+		<xs:sequence>
+			<xs:element name="locale" type="tns:localeBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantUpdateLocaleResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewsSetDefaultOrder">
+		<xs:sequence>
+			<xs:element name="variable" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="ascendingOrder" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="viewsSetDefaultOrderResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeUnselected">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeUnselectedResponse">
+		<xs:sequence>
+			<xs:element name="canBeUnselected" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantEnableMailReception">
+		<xs:sequence>
+			<xs:element name="enableMailReception" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="participantEnableMailReceptionResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="taskCanBeSelected">
+		<xs:sequence>
+			<xs:element name="taskNumber" type="xs:int"></xs:element>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="taskCanBeSelectedResponse">
+		<xs:sequence>
+			<xs:element name="canBeSelected" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeSent">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeSentResponse">
+		<xs:sequence>
+			<xs:element name="canBeSent" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processRun">
+		<xs:sequence>
+			<xs:element name="targetProcessId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="argumentsSetName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="timeout" type="xs:long"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processRunResponse">
+		<xs:sequence>
+			<xs:element name="arguments" type="tns:argumentsBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesGetConsults">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesGetConsultsResponse">
+		<xs:sequence>
+			<xs:element name="instanceIds" type="tns:stringListBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityGetGrabbableInstances">
+		<xs:sequence>
+			<xs:element name="activityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="activityGetGrabbableInstancesResponse">
+		<xs:sequence>
+			<xs:element name="instances" type="tns:instanceInfoBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetAllVersions">
+		<xs:sequence>
+			<xs:element name="processes" type="tns:processIdSetBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetAllVersionsResponse">
+		<xs:sequence>
+			<xs:element name="processIds" type="tns:stringListBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceRefresh">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceRefreshResponse">
+		<xs:sequence>
+			<xs:element name="instance" type="tns:instanceInfoBean"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeResumed">
+		<xs:sequence>
+			<xs:element name="instanceId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instanceCanBeResumedResponse">
+		<xs:sequence>
+			<xs:element name="canBeResumed" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesGrab">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+			<xs:element name="grabActivityName" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesGrabResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesAddBookmark">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesAddBookmarkResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetVisibleActivities">
+		<xs:sequence>
+			<xs:element name="processId" type="xs:string"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processGetVisibleActivitiesResponse">
+		<xs:sequence>
+			<xs:element name="activities" type="tns:activityBeanList"
+				minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesAddNote">
+		<xs:sequence>
+			<xs:element name="instanceActivityPairs"
+				type="tns:instanceActivityPairSetBean" minOccurs="0">
+			</xs:element>
+			<xs:element name="note" type="xs:string" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="instancesAddNoteResponse">
+		<xs:sequence></xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="processesGetGlobalActivitiesByTaskType">
+		<xs:sequence>
+			<xs:element name="processes" type="tns:processIdSetBean"
+				minOccurs="0">
+			</xs:element>
+			<xs:element name="taskType" type="xs:int"></xs:element>
+			<xs:element name="hasInstanceAccess" type="xs:boolean"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType
+		name="processesGetGlobalActivitiesByTaskTypeResponse">
+		<xs:sequence>
+			<xs:element name="globalActivities"
+				type="tns:activityBeanList" minOccurs="0">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="activityType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AUTOMATIC"></xs:enumeration>
+			<xs:enumeration value="INTERACTIVE"></xs:enumeration>
+			<xs:enumeration value="GLOBAL"></xs:enumeration>
+			<xs:enumeration value="CREATION"></xs:enumeration>
+			<xs:enumeration value="GRAB"></xs:enumeration>
+			<xs:enumeration value="BEGIN"></xs:enumeration>
+			<xs:enumeration value="END"></xs:enumeration>
+			<xs:enumeration value="SPLIT"></xs:enumeration>
+			<xs:enumeration value="SPLIT_N"></xs:enumeration>
+			<xs:enumeration value="JOIN"></xs:enumeration>
+			<xs:enumeration value="SUBPROCESS"></xs:enumeration>
+			<xs:enumeration value="PROCESS_CREATION"></xs:enumeration>
+			<xs:enumeration value="TERMINATION_WAIT"></xs:enumeration>
+			<xs:enumeration value="PROCESS_NOTIFICATION"></xs:enumeration>
+			<xs:enumeration value="NOTIFICATION_WAIT"></xs:enumeration>
+			<xs:enumeration value="SUBFLOW"></xs:enumeration>
+			<xs:enumeration value="GROUP"></xs:enumeration>
+			<xs:enumeration value="INTERACTIVE_COMPONENT_CALL"></xs:enumeration>
+			<xs:enumeration value="CONDITIONAL"></xs:enumeration>
+			<xs:enumeration value="COMPENSATE"></xs:enumeration>
+			<xs:enumeration value="GLOBAL_AUTOMATIC"></xs:enumeration>
+			<xs:enumeration value="GLOBAL_CREATION"></xs:enumeration>
+			<xs:enumeration value="INTERACTIVE_GRAB"></xs:enumeration>
+			<xs:enumeration value="DECISION"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="presentationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="APPLICATIONS"></xs:enumeration>
+			<xs:enumeration value="ATTACHMENTS"></xs:enumeration>
+			<xs:enumeration value="INSTANCES"></xs:enumeration>
+			<xs:enumeration value="ACTIVITY"></xs:enumeration>
+			<xs:enumeration value="FOLDER"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="viewType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="APPLICATIONS"></xs:enumeration>
+			<xs:enumeration value="ATTACHMENTS"></xs:enumeration>
+			<xs:enumeration value="INSTANCES"></xs:enumeration>
+			<xs:enumeration value="ACTIVITY_INSTANCES"></xs:enumeration>
+			<xs:enumeration value="FOLDER"></xs:enumeration>
+			<xs:enumeration value="HISTORY"></xs:enumeration>
+			<xs:enumeration value="BOOKMARKS"></xs:enumeration>
+			<xs:enumeration value="CONSULTATIONS"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="comparison">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="IS"></xs:enumeration>
+			<xs:enumeration value="IS_NOT"></xs:enumeration>
+			<xs:enumeration value="LESS_THAN"></xs:enumeration>
+			<xs:enumeration value="LESS_OR_EQUALS"></xs:enumeration>
+			<xs:enumeration value="GREATER_THAN"></xs:enumeration>
+			<xs:enumeration value="GREATER_OR_EQUALS"></xs:enumeration>
+			<xs:enumeration value="IS_NULL"></xs:enumeration>
+			<xs:enumeration value="IS_NOT_NULL"></xs:enumeration>
+			<xs:enumeration value="BEGIN_WITH"></xs:enumeration>
+			<xs:enumeration value="NOT_BEGIN_WITH"></xs:enumeration>
+			<xs:enumeration value="END_WITH"></xs:enumeration>
+			<xs:enumeration value="NOT_END_WITH"></xs:enumeration>
+			<xs:enumeration value="CONTAINS"></xs:enumeration>
+			<xs:enumeration value="NOT_CONTAINS"></xs:enumeration>
+			<xs:enumeration value="BEFORE"></xs:enumeration>
+			<xs:enumeration value="AFTER"></xs:enumeration>
+			<xs:enumeration value="BETWEEN"></xs:enumeration>
+			<xs:enumeration value="NOT_BETWEEN"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="participantScope">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ALL"></xs:enumeration>
+			<xs:enumeration value="ALL_IN_ROLE"></xs:enumeration>
+			<xs:enumeration value="PARTICIPANT_ROLES"></xs:enumeration>
+			<xs:enumeration value="PARTICIPANT"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="statusScope">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ONLY_INPROCESS"></xs:enumeration>
+			<xs:enumeration value="ONLY_COMPLETED"></xs:enumeration>
+			<xs:enumeration value="ONLY_ABORTED"></xs:enumeration>
+			<xs:enumeration value="INPROCESS_AND_COMPLETED"></xs:enumeration>
+			<xs:enumeration value="INPROCESS_AND_ABORTED"></xs:enumeration>
+			<xs:enumeration value="ABORTED_AND_COMPLETED"></xs:enumeration>
+			<xs:enumeration value="ALL"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="participantFor">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="REASSIGN"></xs:enumeration>
+			<xs:enumeration value="DELEGATE"></xs:enumeration>
+			<xs:enumeration value="ESCALATE"></xs:enumeration>
+			<xs:enumeration value="PEER_ASSIGNMENT"></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

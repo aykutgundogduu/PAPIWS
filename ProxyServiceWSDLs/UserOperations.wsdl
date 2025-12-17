@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s0:definitions name="UserOperationsServiceDefinitions" targetNamespace="http://www.kocallianz.com.tr/UserOperations" xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://www.kocallianz.com.tr/UserOperations" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/">
+  <s0:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.kocallianz.com.tr/UserOperations" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getAuthenticationHeader">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="userName" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAuthenticationHeaderResponse">
+        <xs:complexType>
+          <xs:sequence>
+           	<xs:any></xs:any>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </s0:types>
+  <s0:message name="getAuthenticationHeader">
+    <s0:part element="s1:getAuthenticationHeader" name="parameters"/>
+  </s0:message>
+  <s0:message name="getAuthenticationHeaderResponse">
+    <s0:part element="s1:getAuthenticationHeaderResponse" name="parameters"/>
+  </s0:message>
+  <s0:portType name="UserOperations">
+    <s0:operation name="getAuthenticationHeader" parameterOrder="parameters">
+      <s0:input message="s1:getAuthenticationHeader"/>
+      <s0:output message="s1:getAuthenticationHeaderResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="UserOperationsServiceSoapBinding" type="s1:UserOperations">
+    <s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="getAuthenticationHeader">
+      <s2:operation soapAction="" style="document"/>
+      <s0:input>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="UserOperationsService">
+    <s0:port binding="s1:UserOperationsServiceSoapBinding" name="UserOperationsSoapPort">
+      <s2:address location="http://localhost:7001/PapiClientWs/UserOperations"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

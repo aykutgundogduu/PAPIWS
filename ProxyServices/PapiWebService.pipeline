@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oper="http://xmlns.oracle.com/servicebus/pipeline/operations">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="PAPIWS/ProxyServiceWSDLs/PapiWebService"/>
+            <con:binding>
+                <con:name>PapiWebServicePortBinding</con:name>
+                <con:namespace>http://bea.com/albpm/PapiWebService</con:namespace>
+            </con:binding>
+        </con:binding>
+        <oper:operations xmlns:cus="http://www.bea.com/wli/config/customizations" xmlns:xt="http://www.bea.com/wli/config/xmltypes">
+            <oper:monitoring aggregationInterval="10" enabled="false" level="pipeline"/>
+            <oper:pipeline-alerting enabled="false" level="normal"/>
+            <oper:sla-alerting enabled="false" level="normal"/>
+        </oper:operations>
+    </con:coreEntry>
+    <con:router xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/transform/config">
+        <con:pipeline name="_onErrorHandler-5530712865194607095-71b74788.11cdb908d1e.-4a23" type="error">
+            <con:stage name="stage1">
+                <con:actions>
+                    <con1:reply isError="true">
+                        <con1:id>_ActionId-5530712865194607095-71b74788.11cdb908d1e.-4a22</con1:id>
+                    </con1:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:route-node name="RouteNode" error-handler="_onErrorHandler-5530712865194607095-71b74788.11cdb908d1e.-4a23">
+                <con:context>
+                    <con1:varNsDecl prefix="pap" namespace="http://bea.com/albpm/PapiWebService"/>
+                    <con1:variable name="getAuthenticationHeaderRequest" path="$getAuthenticationHeaderRequest" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:xml-schema type="anyType"/>
+                    </con1:variable>
+                    <con1:variable name="getAuthenticationHeaderResponse" path="$getAuthenticationHeaderResponse" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:xml-schema type="anyType"/>
+                    </con1:variable>
+                    <con1:variable name="bpmusername" path="$bpmusername" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:xml-schema type="string"/>
+                    </con1:variable>
+                </con:context>
+                <con:actions>
+                    <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-1683279164518973971-69159690.11ae83c8a54.-8000</con2:id>
+                        <con1:service ref="PAPIWS/BussinessServices/PapiWebService" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:outboundTransform>
+                            <con2:assign varName="bpmusername">
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-1683279164518973971-69159690.11ae83c8a54.-7ff3</con3:id>
+                                <con2:expr>
+                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$body/*/username/text()</con3:xqueryText>
+                                </con2:expr>
+                            </con2:assign>
+                            <con2:delete varName="body">
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-1683279164518973971-69159690.11ae83c8a54.-7ff2</con3:id>
+                                <con2:location>
+                                    <con3:xpathText xmlns:con3="http://www.bea.com/wli/sb/stages/config">./*/username</con3:xpathText>
+                                </con2:location>
+                            </con2:delete>
+                            <con2:assign varName="getAuthenticationHeaderRequest">
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-1683279164518973971-69159690.11ae83c8a54.-7ff5</con3:id>
+                                <con2:expr>
+                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">&lt;user:getAuthenticationHeader xmlns:user="http://www.kocallianz.com.tr/UserOperations">
+    &lt;user:userName>{fn:data($bpmusername)}&lt;/user:userName>
+&lt;/user:getAuthenticationHeader></con3:xqueryText>
+                                </con2:expr>
+                            </con2:assign>
+                            <con2:wsCallout>
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-1683279164518973971-69159690.11ae83c8a54.-7ff6</con3:id>
+                                <con2:service xsi:type="ref:ProxyRef" ref="PAPIWS/ProxyServices/UserOperationsWebService" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                <con2:operation>getAuthenticationHeader</con2:operation>
+                                <con2:request>
+                                    <con2:body wrapped="false">getAuthenticationHeaderRequest</con2:body>
+                                    <con2:header/>
+                                </con2:request>
+                                <con2:response>
+                                    <con2:body wrapped="false">getAuthenticationHeaderResponse</con2:body>
+                                    <con2:header/>
+                                </con2:response>
+                                <con2:requestTransform/>
+                                <con2:responseTransform/>
+                            </con2:wsCallout>
+                            <con2:replace varName="header" contents-only="true">
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-1683279164518973971-69159690.11ae83c8a54.-7ff4</con3:id>
+                                <con2:location>
+                                    <con3:xpathText xmlns:con3="http://www.bea.com/wli/sb/stages/config">.</con3:xpathText>
+                                </con2:location>
+                                <con2:expr>
+                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$getAuthenticationHeaderResponse</con3:xqueryText>
+                                </con2:expr>
+                            </con2:replace>
+                            <con2:transport-headers copy-all="false">
+                                <con3:id xmlns:con3="http://www.bea.com/wli/sb/stages/config">_ActionId-3178885865900802913-1fdc2e70.11dbfac2da0.cc0</con3:id>
+                                <con2:header-set>outbound-request</con2:header-set>
+                                <con2:header name="ALLZ_SSO_USER" value="expression">
+                                    <con3:xqueryText xmlns:con3="http://www.bea.com/wli/sb/stages/config">$bpmusername</con3:xqueryText>
+                                </con2:header>
+                            </con2:transport-headers>
+                        </con1:outboundTransform>
+                        <con1:responseTransform/>
+                    </con1:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

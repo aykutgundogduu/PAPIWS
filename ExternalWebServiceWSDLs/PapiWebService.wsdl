@@ -1,0 +1,3143 @@
+<definitions targetNamespace="http://bea.com/albpm/PapiWebService" name="PapiWebService" xmlns:s0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wssp="http://www.bea.com/wls90/security/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bea.com/albpm/PapiWebService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+	<wsp:UsingPolicy Required="true"/>
+	<wsp:Policy s0:Id="ALBPM_UsernameTokenProfile">
+		<wssp:Identity>
+			<wssp:SupportedTokens>
+				<wssp:SecurityToken TokenType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#UsernameToken">
+					<wssp:UsePassword Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">
+					</wssp:UsePassword>
+				</wssp:SecurityToken>
+			</wssp:SupportedTokens>
+		</wssp:Identity>
+	</wsp:Policy>
+	<types>
+		<xsd:schema>
+			<xsd:import namespace="http://bea.com/albpm/PapiWebService" schemaLocation="../XMLSchemas/PapiOriginal.xsd">
+			</xsd:import>
+		</xsd:schema>
+	</types>
+	<message name="processesGetGlobalActivitiesByTaskType">
+		<part name="parameters" element="tns:processesGetGlobalActivitiesByTaskType">
+		</part>
+	</message>
+	<message name="processesGetGlobalActivitiesByTaskTypeResponse">
+		<part name="parameters" element="tns:processesGetGlobalActivitiesByTaskTypeResponse">
+		</part>
+	</message>
+	<message name="OperationException">
+		<part name="fault" element="tns:OperationException"/>
+	</message>
+	<message name="processesGetGlobalActivities">
+		<part name="parameters" element="tns:processesGetGlobalActivities">
+		</part>
+	</message>
+	<message name="processesGetGlobalActivitiesResponse">
+		<part name="parameters" element="tns:processesGetGlobalActivitiesResponse">
+		</part>
+	</message>
+	<message name="processesGetApplications">
+		<part name="parameters" element="tns:processesGetApplications">
+		</part>
+	</message>
+	<message name="processesGetApplicationsResponse">
+		<part name="parameters" element="tns:processesGetApplicationsResponse">
+		</part>
+	</message>
+	<message name="instanceHasAttachments">
+		<part name="parameters" element="tns:instanceHasAttachments"/>
+	</message>
+	<message name="instanceHasAttachmentsResponse">
+		<part name="parameters" element="tns:instanceHasAttachmentsResponse">
+		</part>
+	</message>
+	<message name="instanceHasNotes">
+		<part name="parameters" element="tns:instanceHasNotes"/>
+	</message>
+	<message name="instanceHasNotesResponse">
+		<part name="parameters" element="tns:instanceHasNotesResponse">
+		</part>
+	</message>
+	<message name="participantEnableMailReception">
+		<part name="parameters" element="tns:participantEnableMailReception">
+		</part>
+	</message>
+	<message name="participantEnableMailReceptionResponse">
+		<part name="parameters" element="tns:participantEnableMailReceptionResponse">
+		</part>
+	</message>
+	<message name="participantChangePasswordEnabled">
+		<part name="parameters" element="tns:participantChangePasswordEnabled">
+		</part>
+	</message>
+	<message name="participantChangePasswordEnabledResponse">
+		<part name="parameters" element="tns:participantChangePasswordEnabledResponse">
+		</part>
+	</message>
+	<message name="activityGetGrabbableInstances">
+		<part name="parameters" element="tns:activityGetGrabbableInstances">
+		</part>
+	</message>
+	<message name="activityGetGrabbableInstancesResponse">
+		<part name="parameters" element="tns:activityGetGrabbableInstancesResponse">
+		</part>
+	</message>
+	<message name="instanceGetParticipants">
+		<part name="parameters" element="tns:instanceGetParticipants"/>
+	</message>
+	<message name="instanceGetParticipantsResponse">
+		<part name="parameters" element="tns:instanceGetParticipantsResponse">
+		</part>
+	</message>
+	<message name="processGetActiveVersion">
+		<part name="parameters" element="tns:processGetActiveVersion"/>
+	</message>
+	<message name="processGetActiveVersionResponse">
+		<part name="parameters" element="tns:processGetActiveVersionResponse">
+		</part>
+	</message>
+	<message name="activityGetDocumentation">
+		<part name="parameters" element="tns:activityGetDocumentation">
+		</part>
+	</message>
+	<message name="activityGetDocumentationResponse">
+		<part name="parameters" element="tns:activityGetDocumentationResponse">
+		</part>
+	</message>
+	<message name="processGetAllVersions">
+		<part name="parameters" element="tns:processGetAllVersions"/>
+	</message>
+	<message name="processGetAllVersionsResponse">
+		<part name="parameters" element="tns:processGetAllVersionsResponse">
+		</part>
+	</message>
+	<message name="processesGetAllVersions">
+		<part name="parameters" element="tns:processesGetAllVersions"/>
+	</message>
+	<message name="processesGetAllVersionsResponse">
+		<part name="parameters" element="tns:processesGetAllVersionsResponse">
+		</part>
+	</message>
+	<message name="viewGetApplications">
+		<part name="parameters" element="tns:viewGetApplications"/>
+	</message>
+	<message name="viewGetApplicationsResponse">
+		<part name="parameters" element="tns:viewGetApplicationsResponse">
+		</part>
+	</message>
+	<message name="instancesGetBookmarks">
+		<part name="parameters" element="tns:instancesGetBookmarks"/>
+	</message>
+	<message name="instancesGetBookmarksResponse">
+		<part name="parameters" element="tns:instancesGetBookmarksResponse">
+		</part>
+	</message>
+	<message name="viewGetChildren">
+		<part name="parameters" element="tns:viewGetChildren"/>
+	</message>
+	<message name="viewGetChildrenResponse">
+		<part name="parameters" element="tns:viewGetChildrenResponse"/>
+	</message>
+	<message name="instanceGetLastConsult">
+		<part name="parameters" element="tns:instanceGetLastConsult"/>
+	</message>
+	<message name="instanceGetLastConsultResponse">
+		<part name="parameters" element="tns:instanceGetLastConsultResponse">
+		</part>
+	</message>
+	<message name="instancesGetConsults">
+		<part name="parameters" element="tns:instancesGetConsults"/>
+	</message>
+	<message name="instancesGetConsultsResponse">
+		<part name="parameters" element="tns:instancesGetConsultsResponse">
+		</part>
+	</message>
+	<message name="viewsSetDefaultOrder">
+		<part name="parameters" element="tns:viewsSetDefaultOrder"/>
+	</message>
+	<message name="viewsSetDefaultOrderResponse">
+		<part name="parameters" element="tns:viewsSetDefaultOrderResponse">
+		</part>
+	</message>
+	<message name="presentationGetDefaultByType">
+		<part name="parameters" element="tns:presentationGetDefaultByType">
+		</part>
+	</message>
+	<message name="presentationGetDefaultByTypeResponse">
+		<part name="parameters" element="tns:presentationGetDefaultByTypeResponse">
+		</part>
+	</message>
+	<message name="presentationGetDefaultByViewType">
+		<part name="parameters" element="tns:presentationGetDefaultByViewType">
+		</part>
+	</message>
+	<message name="presentationGetDefaultByViewTypeResponse">
+		<part name="parameters" element="tns:presentationGetDefaultByViewTypeResponse">
+		</part>
+	</message>
+	<message name="instanceGrabbableFrom">
+		<part name="parameters" element="tns:instanceGrabbableFrom"/>
+	</message>
+	<message name="instanceGrabbableFromResponse">
+		<part name="parameters" element="tns:instanceGrabbableFromResponse">
+		</part>
+	</message>
+	<message name="processGetInstanceInActivity">
+		<part name="parameters" element="tns:processGetInstanceInActivity">
+		</part>
+	</message>
+	<message name="processGetInstanceInActivityResponse">
+		<part name="parameters" element="tns:processGetInstanceInActivityResponse">
+		</part>
+	</message>
+	<message name="processGetInstance">
+		<part name="parameters" element="tns:processGetInstance"/>
+	</message>
+	<message name="processGetInstanceResponse">
+		<part name="parameters" element="tns:processGetInstanceResponse">
+		</part>
+	</message>
+	<message name="processGetInstanceByCorrelation">
+		<part name="parameters" element="tns:processGetInstanceByCorrelation">
+		</part>
+	</message>
+	<message name="processGetInstanceByCorrelationResponse">
+		<part name="parameters" element="tns:processGetInstanceByCorrelationResponse">
+		</part>
+	</message>
+	<message name="instanceGetEvents">
+		<part name="parameters" element="tns:instanceGetEvents"/>
+	</message>
+	<message name="instanceGetEventsResponse">
+		<part name="parameters" element="tns:instanceGetEventsResponse">
+		</part>
+	</message>
+	<message name="instanceGetNotes">
+		<part name="parameters" element="tns:instanceGetNotes"/>
+	</message>
+	<message name="instanceGetNotesResponse">
+		<part name="parameters" element="tns:instanceGetNotesResponse">
+		</part>
+	</message>
+	<message name="processGetInstances">
+		<part name="parameters" element="tns:processGetInstances"/>
+	</message>
+	<message name="processGetInstancesResponse">
+		<part name="parameters" element="tns:processGetInstancesResponse">
+		</part>
+	</message>
+	<message name="processesGetInstancesByFilter">
+		<part name="parameters" element="tns:processesGetInstancesByFilter">
+		</part>
+	</message>
+	<message name="processesGetInstancesByFilterResponse">
+		<part name="parameters" element="tns:processesGetInstancesByFilterResponse">
+		</part>
+	</message>
+	<message name="viewGetInstances">
+		<part name="parameters" element="tns:viewGetInstances"/>
+	</message>
+	<message name="viewGetInstancesResponse">
+		<part name="parameters" element="tns:viewGetInstancesResponse">
+		</part>
+	</message>
+	<message name="participantUpdateLocale">
+		<part name="parameters" element="tns:participantUpdateLocale"/>
+	</message>
+	<message name="participantUpdateLocaleResponse">
+		<part name="parameters" element="tns:participantUpdateLocaleResponse">
+		</part>
+	</message>
+	<message name="participantLocale">
+		<part name="parameters" element="tns:participantLocale"/>
+	</message>
+	<message name="participantLocaleResponse">
+		<part name="parameters" element="tns:participantLocaleResponse">
+		</part>
+	</message>
+	<message name="noteGet">
+		<part name="parameters" element="tns:noteGet"/>
+	</message>
+	<message name="noteGetResponse">
+		<part name="parameters" element="tns:noteGetResponse"/>
+	</message>
+	<message name="organization">
+		<part name="parameters" element="tns:organization"/>
+	</message>
+	<message name="organizationResponse">
+		<part name="parameters" element="tns:organizationResponse"/>
+	</message>
+	<message name="viewGetParent">
+		<part name="parameters" element="tns:viewGetParent"/>
+	</message>
+	<message name="viewGetParentResponse">
+		<part name="parameters" element="tns:viewGetParentResponse"/>
+	</message>
+	<message name="viewGetParentId">
+		<part name="parameters" element="tns:viewGetParentId"/>
+	</message>
+	<message name="viewGetParentIdResponse">
+		<part name="parameters" element="tns:viewGetParentIdResponse"/>
+	</message>
+	<message name="participantCurrent">
+		<part name="parameters" element="tns:participantCurrent"/>
+	</message>
+	<message name="participantCurrentResponse">
+		<part name="parameters" element="tns:participantCurrentResponse">
+		</part>
+	</message>
+	<message name="participantFind">
+		<part name="parameters" element="tns:participantFind"/>
+	</message>
+	<message name="participantFindResponse">
+		<part name="parameters" element="tns:participantFindResponse"/>
+	</message>
+	<message name="presentationGet">
+		<part name="parameters" element="tns:presentationGet"/>
+	</message>
+	<message name="presentationGetResponse">
+		<part name="parameters" element="tns:presentationGetResponse"/>
+	</message>
+	<message name="presentationsGetIds">
+		<part name="parameters" element="tns:presentationsGetIds"/>
+	</message>
+	<message name="presentationsGetIdsResponse">
+		<part name="parameters" element="tns:presentationsGetIdsResponse">
+		</part>
+	</message>
+	<message name="processGet">
+		<part name="parameters" element="tns:processGet"/>
+	</message>
+	<message name="processGetResponse">
+		<part name="parameters" element="tns:processGetResponse"/>
+	</message>
+	<message name="processGetDocumentation">
+		<part name="parameters" element="tns:processGetDocumentation"/>
+	</message>
+	<message name="processGetDocumentationResponse">
+		<part name="parameters" element="tns:processGetDocumentationResponse">
+		</part>
+	</message>
+	<message name="instanceGetProcessId">
+		<part name="parameters" element="tns:instanceGetProcessId"/>
+	</message>
+	<message name="instanceGetProcessIdResponse">
+		<part name="parameters" element="tns:instanceGetProcessIdResponse">
+		</part>
+	</message>
+	<message name="instanceGetVariable">
+		<part name="parameters" element="tns:instanceGetVariable"/>
+	</message>
+	<message name="instanceGetVariableResponse">
+		<part name="parameters" element="tns:instanceGetVariableResponse">
+		</part>
+	</message>
+	<message name="processGetId">
+		<part name="parameters" element="tns:processGetId"/>
+	</message>
+	<message name="processGetIdResponse">
+		<part name="parameters" element="tns:processGetIdResponse"/>
+	</message>
+	<message name="processesGetIds">
+		<part name="parameters" element="tns:processesGetIds"/>
+	</message>
+	<message name="processesGetIdsResponse">
+		<part name="parameters" element="tns:processesGetIdsResponse"/>
+	</message>
+	<message name="processesGet">
+		<part name="parameters" element="tns:processesGet"/>
+	</message>
+	<message name="processesGetResponse">
+		<part name="parameters" element="tns:processesGetResponse"/>
+	</message>
+	<message name="participantUpdateTimeZone">
+		<part name="parameters" element="tns:participantUpdateTimeZone">
+		</part>
+	</message>
+	<message name="participantUpdateTimeZoneResponse">
+		<part name="parameters" element="tns:participantUpdateTimeZoneResponse">
+		</part>
+	</message>
+	<message name="participantTimeZone">
+		<part name="parameters" element="tns:participantTimeZone"/>
+	</message>
+	<message name="participantTimeZoneResponse">
+		<part name="parameters" element="tns:participantTimeZoneResponse">
+		</part>
+	</message>
+	<message name="variableGet">
+		<part name="parameters" element="tns:variableGet"/>
+	</message>
+	<message name="variableGetResponse">
+		<part name="parameters" element="tns:variableGetResponse"/>
+	</message>
+	<message name="variablesGet">
+		<part name="parameters" element="tns:variablesGet"/>
+	</message>
+	<message name="variablesGetResponse">
+		<part name="parameters" element="tns:variablesGetResponse"/>
+	</message>
+	<message name="viewGet">
+		<part name="parameters" element="tns:viewGet"/>
+	</message>
+	<message name="viewGetResponse">
+		<part name="parameters" element="tns:viewGetResponse"/>
+	</message>
+	<message name="viewsGetIds">
+		<part name="parameters" element="tns:viewsGetIds"/>
+	</message>
+	<message name="viewsGetIdsResponse">
+		<part name="parameters" element="tns:viewsGetIdsResponse"/>
+	</message>
+	<message name="processGetVisibleActivities">
+		<part name="parameters" element="tns:processGetVisibleActivities">
+		</part>
+	</message>
+	<message name="processGetVisibleActivitiesResponse">
+		<part name="parameters" element="tns:processGetVisibleActivitiesResponse">
+		</part>
+	</message>
+	<message name="processCreateInstance">
+		<part name="parameters" element="tns:processCreateInstance"/>
+	</message>
+	<message name="processCreateInstanceResponse">
+		<part name="parameters" element="tns:processCreateInstanceResponse">
+		</part>
+	</message>
+	<message name="viewHasNewInstances">
+		<part name="parameters" element="tns:viewHasNewInstances"/>
+	</message>
+	<message name="viewHasNewInstancesResponse">
+		<part name="parameters" element="tns:viewHasNewInstancesResponse">
+		</part>
+	</message>
+	<message name="viewsHaveNewInstances">
+		<part name="parameters" element="tns:viewsHaveNewInstances"/>
+	</message>
+	<message name="viewsHaveNewInstancesResponse">
+		<part name="parameters" element="tns:viewsHaveNewInstancesResponse">
+		</part>
+	</message>
+	<message name="instanceRefresh">
+		<part name="parameters" element="tns:instanceRefresh"/>
+	</message>
+	<message name="instanceRefreshResponse">
+		<part name="parameters" element="tns:instanceRefreshResponse"/>
+	</message>
+	<message name="participantRetrieveProperty">
+		<part name="parameters" element="tns:participantRetrieveProperty">
+		</part>
+	</message>
+	<message name="participantRetrievePropertyResponse">
+		<part name="parameters" element="tns:participantRetrievePropertyResponse">
+		</part>
+	</message>
+	<message name="activityExecuteApplication">
+		<part name="parameters" element="tns:activityExecuteApplication">
+		</part>
+	</message>
+	<message name="activityExecuteApplicationResponse">
+		<part name="parameters" element="tns:activityExecuteApplicationResponse">
+		</part>
+	</message>
+	<message name="processRun">
+		<part name="parameters" element="tns:processRun"/>
+	</message>
+	<message name="processRunResponse">
+		<part name="parameters" element="tns:processRunResponse"/>
+	</message>
+	<message name="participantFindByName">
+		<part name="parameters" element="tns:participantFindByName"/>
+	</message>
+	<message name="participantFindByNameResponse">
+		<part name="parameters" element="tns:participantFindByNameResponse">
+		</part>
+	</message>
+	<message name="processSendRelatedNotification">
+		<part name="parameters" element="tns:processSendRelatedNotification">
+		</part>
+	</message>
+	<message name="processSendRelatedNotificationResponse">
+		<part name="parameters" element="tns:processSendRelatedNotificationResponse">
+		</part>
+	</message>
+	<message name="processSendNotification">
+		<part name="parameters" element="tns:processSendNotification"/>
+	</message>
+	<message name="processSendNotificationResponse">
+		<part name="parameters" element="tns:processSendNotificationResponse">
+		</part>
+	</message>
+	<message name="instancesAddBookmark">
+		<part name="parameters" element="tns:instancesAddBookmark"/>
+	</message>
+	<message name="instancesAddBookmarkResponse">
+		<part name="parameters" element="tns:instancesAddBookmarkResponse">
+		</part>
+	</message>
+	<message name="activityCommit">
+		<part name="parameters" element="tns:activityCommit"/>
+	</message>
+	<message name="activityCommitResponse">
+		<part name="parameters" element="tns:activityCommitResponse"/>
+	</message>
+	<message name="activityAbort">
+		<part name="parameters" element="tns:activityAbort"/>
+	</message>
+	<message name="activityAbortResponse">
+		<part name="parameters" element="tns:activityAbortResponse"/>
+	</message>
+	<message name="activityAbortTask">
+		<part name="parameters" element="tns:activityAbortTask"/>
+	</message>
+	<message name="activityAbortTaskResponse">
+		<part name="parameters" element="tns:activityAbortTaskResponse">
+		</part>
+	</message>
+	<message name="instanceGetGlobalActivities">
+		<part name="parameters" element="tns:instanceGetGlobalActivities">
+		</part>
+	</message>
+	<message name="instanceGetGlobalActivitiesResponse">
+		<part name="parameters" element="tns:instanceGetGlobalActivitiesResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeAborted">
+		<part name="parameters" element="tns:instanceCanBeAborted"/>
+	</message>
+	<message name="instanceCanBeAbortedResponse">
+		<part name="parameters" element="tns:instanceCanBeAbortedResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeSentBack">
+		<part name="parameters" element="tns:instanceCanBeSentBack"/>
+	</message>
+	<message name="instanceCanBeSentBackResponse">
+		<part name="parameters" element="tns:instanceCanBeSentBackResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeProcessed">
+		<part name="parameters" element="tns:instanceCanBeProcessed"/>
+	</message>
+	<message name="instanceCanBeProcessedResponse">
+		<part name="parameters" element="tns:instanceCanBeProcessedResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeReassigned">
+		<part name="parameters" element="tns:instanceCanBeReassigned"/>
+	</message>
+	<message name="instanceCanBeReassignedResponse">
+		<part name="parameters" element="tns:instanceCanBeReassignedResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeDelegated">
+		<part name="parameters" element="tns:instanceCanBeDelegated"/>
+	</message>
+	<message name="instanceCanBeDelegatedResponse">
+		<part name="parameters" element="tns:instanceCanBeDelegatedResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeEscalated">
+		<part name="parameters" element="tns:instanceCanBeEscalated"/>
+	</message>
+	<message name="instanceCanBeEscalatedResponse">
+		<part name="parameters" element="tns:instanceCanBeEscalatedResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeReassignedToPeer">
+		<part name="parameters" element="tns:instanceCanBeReassignedToPeer">
+		</part>
+	</message>
+	<message name="instanceCanBeReassignedToPeerResponse">
+		<part name="parameters" element="tns:instanceCanBeReassignedToPeerResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeResumed">
+		<part name="parameters" element="tns:instanceCanBeResumed"/>
+	</message>
+	<message name="instanceCanBeResumedResponse">
+		<part name="parameters" element="tns:instanceCanBeResumedResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeSelected">
+		<part name="parameters" element="tns:instanceCanBeSelected"/>
+	</message>
+	<message name="instanceCanBeSelectedResponse">
+		<part name="parameters" element="tns:instanceCanBeSelectedResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeSent">
+		<part name="parameters" element="tns:instanceCanBeSent"/>
+	</message>
+	<message name="instanceCanBeSentResponse">
+		<part name="parameters" element="tns:instanceCanBeSentResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeSuspended">
+		<part name="parameters" element="tns:instanceCanBeSuspended"/>
+	</message>
+	<message name="instanceCanBeSuspendedResponse">
+		<part name="parameters" element="tns:instanceCanBeSuspendedResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeUngrabbed">
+		<part name="parameters" element="tns:instanceCanBeUngrabbed"/>
+	</message>
+	<message name="instanceCanBeUngrabbedResponse">
+		<part name="parameters" element="tns:instanceCanBeUngrabbedResponse">
+		</part>
+	</message>
+	<message name="instanceCanBeUnselected">
+		<part name="parameters" element="tns:instanceCanBeUnselected"/>
+	</message>
+	<message name="instanceCanBeUnselectedResponse">
+		<part name="parameters" element="tns:instanceCanBeUnselectedResponse">
+		</part>
+	</message>
+	<message name="instanceReassign">
+		<part name="parameters" element="tns:instanceReassign"/>
+	</message>
+	<message name="instanceReassignResponse">
+		<part name="parameters" element="tns:instanceReassignResponse">
+		</part>
+	</message>
+	<message name="instancesAbort">
+		<part name="parameters" element="tns:instancesAbort"/>
+	</message>
+	<message name="instancesAbortResponse">
+		<part name="parameters" element="tns:instancesAbortResponse"/>
+	</message>
+	<message name="instancesAddConsult">
+		<part name="parameters" element="tns:instancesAddConsult"/>
+	</message>
+	<message name="instancesAddConsultResponse">
+		<part name="parameters" element="tns:instancesAddConsultResponse">
+		</part>
+	</message>
+	<message name="instancesAddNote">
+		<part name="parameters" element="tns:instancesAddNote"/>
+	</message>
+	<message name="instancesAddNoteResponse">
+		<part name="parameters" element="tns:instancesAddNoteResponse">
+		</part>
+	</message>
+	<message name="instancesGrab">
+		<part name="parameters" element="tns:instancesGrab"/>
+	</message>
+	<message name="instancesGrabResponse">
+		<part name="parameters" element="tns:instancesGrabResponse"/>
+	</message>
+	<message name="instancesResume">
+		<part name="parameters" element="tns:instancesResume"/>
+	</message>
+	<message name="instancesResumeResponse">
+		<part name="parameters" element="tns:instancesResumeResponse"/>
+	</message>
+	<message name="instancesSelect">
+		<part name="parameters" element="tns:instancesSelect"/>
+	</message>
+	<message name="instancesSelectResponse">
+		<part name="parameters" element="tns:instancesSelectResponse"/>
+	</message>
+	<message name="instancesSend">
+		<part name="parameters" element="tns:instancesSend"/>
+	</message>
+	<message name="instancesSendResponse">
+		<part name="parameters" element="tns:instancesSendResponse"/>
+	</message>
+	<message name="instancesSendBack">
+		<part name="parameters" element="tns:instancesSendBack"/>
+	</message>
+	<message name="instancesSendBackResponse">
+		<part name="parameters" element="tns:instancesSendBackResponse">
+		</part>
+	</message>
+	<message name="instancesSendTo">
+		<part name="parameters" element="tns:instancesSendTo"/>
+	</message>
+	<message name="instancesSendToResponse">
+		<part name="parameters" element="tns:instancesSendToResponse"/>
+	</message>
+	<message name="instancesSuspend">
+		<part name="parameters" element="tns:instancesSuspend"/>
+	</message>
+	<message name="instancesSuspendResponse">
+		<part name="parameters" element="tns:instancesSuspendResponse">
+		</part>
+	</message>
+	<message name="instancesGetTargetActivities">
+		<part name="parameters" element="tns:instancesGetTargetActivities">
+		</part>
+	</message>
+	<message name="instancesGetTargetActivitiesResponse">
+		<part name="parameters" element="tns:instancesGetTargetActivitiesResponse">
+		</part>
+	</message>
+	<message name="instancesUngrab">
+		<part name="parameters" element="tns:instancesUngrab"/>
+	</message>
+	<message name="instancesUngrabResponse">
+		<part name="parameters" element="tns:instancesUngrabResponse"/>
+	</message>
+	<message name="instancesUnselect">
+		<part name="parameters" element="tns:instancesUnselect"/>
+	</message>
+	<message name="instancesUnselectResponse">
+		<part name="parameters" element="tns:instancesUnselectResponse">
+		</part>
+	</message>
+	<message name="activityPrepare">
+		<part name="parameters" element="tns:activityPrepare"/>
+	</message>
+	<message name="activityPrepareResponse">
+		<part name="parameters" element="tns:activityPrepareResponse"/>
+	</message>
+	<message name="instancesRemoveBookmark">
+		<part name="parameters" element="tns:instancesRemoveBookmark"/>
+	</message>
+	<message name="instancesRemoveBookmarkResponse">
+		<part name="parameters" element="tns:instancesRemoveBookmarkResponse">
+		</part>
+	</message>
+	<message name="activityExecute">
+		<part name="parameters" element="tns:activityExecute"/>
+	</message>
+	<message name="activityExecuteResponse">
+		<part name="parameters" element="tns:activityExecuteResponse"/>
+	</message>
+	<message name="activityExecuteTask">
+		<part name="parameters" element="tns:activityExecuteTask"/>
+	</message>
+	<message name="activityExecuteTaskResponse">
+		<part name="parameters" element="tns:activityExecuteTaskResponse">
+		</part>
+	</message>
+	<message name="participantStoreProperty">
+		<part name="parameters" element="tns:participantStoreProperty">
+		</part>
+	</message>
+	<message name="participantStorePropertyResponse">
+		<part name="parameters" element="tns:participantStorePropertyResponse">
+		</part>
+	</message>
+	<message name="taskCanBeProcessed">
+		<part name="parameters" element="tns:taskCanBeProcessed"/>
+	</message>
+	<message name="taskCanBeProcessedResponse">
+		<part name="parameters" element="tns:taskCanBeProcessedResponse">
+		</part>
+	</message>
+	<message name="taskCanBeSelected">
+		<part name="parameters" element="tns:taskCanBeSelected"/>
+	</message>
+	<message name="taskCanBeSelectedResponse">
+		<part name="parameters" element="tns:taskCanBeSelectedResponse">
+		</part>
+	</message>
+	<message name="taskCanBeUnselected">
+		<part name="parameters" element="tns:taskCanBeUnselected"/>
+	</message>
+	<message name="taskCanBeUnselectedResponse">
+		<part name="parameters" element="tns:taskCanBeUnselectedResponse">
+		</part>
+	</message>
+	<message name="tasksSelect">
+		<part name="parameters" element="tns:tasksSelect"/>
+	</message>
+	<message name="tasksSelectResponse">
+		<part name="parameters" element="tns:tasksSelectResponse"/>
+	</message>
+	<message name="tasksUnselect">
+		<part name="parameters" element="tns:tasksUnselect"/>
+	</message>
+	<message name="tasksUnselectResponse">
+		<part name="parameters" element="tns:tasksUnselectResponse"/>
+	</message>
+	<message name="participantUpdatePassword">
+		<part name="parameters" element="tns:participantUpdatePassword">
+		</part>
+	</message>
+	<message name="participantUpdatePasswordResponse">
+		<part name="parameters" element="tns:participantUpdatePasswordResponse">
+		</part>
+	</message>
+	<portType name="PapiWebService">
+		<operation name="processesGetGlobalActivitiesByTaskType">
+			<input message="tns:processesGetGlobalActivitiesByTaskType">
+			</input>
+			<output message="tns:processesGetGlobalActivitiesByTaskTypeResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processesGetGlobalActivities">
+			<input message="tns:processesGetGlobalActivities"/>
+			<output message="tns:processesGetGlobalActivitiesResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processesGetApplications">
+			<input message="tns:processesGetApplications"/>
+			<output message="tns:processesGetApplicationsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceHasAttachments">
+			<input message="tns:instanceHasAttachments"/>
+			<output message="tns:instanceHasAttachmentsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceHasNotes">
+			<input message="tns:instanceHasNotes"/>
+			<output message="tns:instanceHasNotesResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantEnableMailReception">
+			<input message="tns:participantEnableMailReception"/>
+			<output message="tns:participantEnableMailReceptionResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantChangePasswordEnabled">
+			<input message="tns:participantChangePasswordEnabled"/>
+			<output message="tns:participantChangePasswordEnabledResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="activityGetGrabbableInstances">
+			<input message="tns:activityGetGrabbableInstances"/>
+			<output message="tns:activityGetGrabbableInstancesResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceGetParticipants">
+			<input message="tns:instanceGetParticipants"/>
+			<output message="tns:instanceGetParticipantsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGetActiveVersion">
+			<input message="tns:processGetActiveVersion"/>
+			<output message="tns:processGetActiveVersionResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="activityGetDocumentation">
+			<input message="tns:activityGetDocumentation"/>
+			<output message="tns:activityGetDocumentationResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGetAllVersions">
+			<input message="tns:processGetAllVersions"/>
+			<output message="tns:processGetAllVersionsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processesGetAllVersions">
+			<input message="tns:processesGetAllVersions"/>
+			<output message="tns:processesGetAllVersionsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewGetApplications">
+			<input message="tns:viewGetApplications"/>
+			<output message="tns:viewGetApplicationsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesGetBookmarks">
+			<input message="tns:instancesGetBookmarks"/>
+			<output message="tns:instancesGetBookmarksResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewGetChildren">
+			<input message="tns:viewGetChildren"/>
+			<output message="tns:viewGetChildrenResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceGetLastConsult">
+			<input message="tns:instanceGetLastConsult"/>
+			<output message="tns:instanceGetLastConsultResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesGetConsults">
+			<input message="tns:instancesGetConsults"/>
+			<output message="tns:instancesGetConsultsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewsSetDefaultOrder">
+			<input message="tns:viewsSetDefaultOrder"/>
+			<output message="tns:viewsSetDefaultOrderResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="presentationGetDefaultByType">
+			<input message="tns:presentationGetDefaultByType"/>
+			<output message="tns:presentationGetDefaultByTypeResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="presentationGetDefaultByViewType">
+			<input message="tns:presentationGetDefaultByViewType"/>
+			<output message="tns:presentationGetDefaultByViewTypeResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceGrabbableFrom">
+			<input message="tns:instanceGrabbableFrom"/>
+			<output message="tns:instanceGrabbableFromResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGetInstanceInActivity">
+			<input message="tns:processGetInstanceInActivity"/>
+			<output message="tns:processGetInstanceInActivityResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGetInstance">
+			<input message="tns:processGetInstance"/>
+			<output message="tns:processGetInstanceResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGetInstanceByCorrelation">
+			<input message="tns:processGetInstanceByCorrelation"/>
+			<output message="tns:processGetInstanceByCorrelationResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceGetEvents">
+			<input message="tns:instanceGetEvents"/>
+			<output message="tns:instanceGetEventsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceGetNotes">
+			<input message="tns:instanceGetNotes"/>
+			<output message="tns:instanceGetNotesResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGetInstances">
+			<input message="tns:processGetInstances"/>
+			<output message="tns:processGetInstancesResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processesGetInstancesByFilter">
+			<input message="tns:processesGetInstancesByFilter"/>
+			<output message="tns:processesGetInstancesByFilterResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewGetInstances">
+			<input message="tns:viewGetInstances"/>
+			<output message="tns:viewGetInstancesResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantUpdateLocale">
+			<input message="tns:participantUpdateLocale"/>
+			<output message="tns:participantUpdateLocaleResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantLocale">
+			<input message="tns:participantLocale"/>
+			<output message="tns:participantLocaleResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="noteGet">
+			<input message="tns:noteGet"/>
+			<output message="tns:noteGetResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="organization">
+			<input message="tns:organization"/>
+			<output message="tns:organizationResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewGetParent">
+			<input message="tns:viewGetParent"/>
+			<output message="tns:viewGetParentResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewGetParentId">
+			<input message="tns:viewGetParentId"/>
+			<output message="tns:viewGetParentIdResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantCurrent">
+			<input message="tns:participantCurrent"/>
+			<output message="tns:participantCurrentResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantFind">
+			<input message="tns:participantFind"/>
+			<output message="tns:participantFindResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="presentationGet">
+			<input message="tns:presentationGet"/>
+			<output message="tns:presentationGetResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="presentationsGetIds">
+			<input message="tns:presentationsGetIds"/>
+			<output message="tns:presentationsGetIdsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGet">
+			<input message="tns:processGet"/>
+			<output message="tns:processGetResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGetDocumentation">
+			<input message="tns:processGetDocumentation"/>
+			<output message="tns:processGetDocumentationResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceGetProcessId">
+			<input message="tns:instanceGetProcessId"/>
+			<output message="tns:instanceGetProcessIdResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceGetVariable">
+			<input message="tns:instanceGetVariable"/>
+			<output message="tns:instanceGetVariableResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGetId">
+			<input message="tns:processGetId"/>
+			<output message="tns:processGetIdResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processesGetIds">
+			<input message="tns:processesGetIds"/>
+			<output message="tns:processesGetIdsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processesGet">
+			<input message="tns:processesGet"/>
+			<output message="tns:processesGetResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantUpdateTimeZone">
+			<input message="tns:participantUpdateTimeZone"/>
+			<output message="tns:participantUpdateTimeZoneResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantTimeZone">
+			<input message="tns:participantTimeZone"/>
+			<output message="tns:participantTimeZoneResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="variableGet">
+			<input message="tns:variableGet"/>
+			<output message="tns:variableGetResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="variablesGet">
+			<input message="tns:variablesGet"/>
+			<output message="tns:variablesGetResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewGet">
+			<input message="tns:viewGet"/>
+			<output message="tns:viewGetResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewsGetIds">
+			<input message="tns:viewsGetIds"/>
+			<output message="tns:viewsGetIdsResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processGetVisibleActivities">
+			<input message="tns:processGetVisibleActivities"/>
+			<output message="tns:processGetVisibleActivitiesResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processCreateInstance">
+			<input message="tns:processCreateInstance"/>
+			<output message="tns:processCreateInstanceResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewHasNewInstances">
+			<input message="tns:viewHasNewInstances"/>
+			<output message="tns:viewHasNewInstancesResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="viewsHaveNewInstances">
+			<input message="tns:viewsHaveNewInstances"/>
+			<output message="tns:viewsHaveNewInstancesResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceRefresh">
+			<input message="tns:instanceRefresh"/>
+			<output message="tns:instanceRefreshResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantRetrieveProperty">
+			<input message="tns:participantRetrieveProperty"/>
+			<output message="tns:participantRetrievePropertyResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="activityExecuteApplication">
+			<input message="tns:activityExecuteApplication"/>
+			<output message="tns:activityExecuteApplicationResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processRun">
+			<input message="tns:processRun"/>
+			<output message="tns:processRunResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantFindByName">
+			<input message="tns:participantFindByName"/>
+			<output message="tns:participantFindByNameResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processSendRelatedNotification">
+			<input message="tns:processSendRelatedNotification"/>
+			<output message="tns:processSendRelatedNotificationResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="processSendNotification">
+			<input message="tns:processSendNotification"/>
+			<output message="tns:processSendNotificationResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesAddBookmark">
+			<input message="tns:instancesAddBookmark"/>
+			<output message="tns:instancesAddBookmarkResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="activityCommit">
+			<input message="tns:activityCommit"/>
+			<output message="tns:activityCommitResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="activityAbort">
+			<input message="tns:activityAbort"/>
+			<output message="tns:activityAbortResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="activityAbortTask">
+			<input message="tns:activityAbortTask"/>
+			<output message="tns:activityAbortTaskResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceGetGlobalActivities">
+			<input message="tns:instanceGetGlobalActivities"/>
+			<output message="tns:instanceGetGlobalActivitiesResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeAborted">
+			<input message="tns:instanceCanBeAborted"/>
+			<output message="tns:instanceCanBeAbortedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeSentBack">
+			<input message="tns:instanceCanBeSentBack"/>
+			<output message="tns:instanceCanBeSentBackResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeProcessed">
+			<input message="tns:instanceCanBeProcessed"/>
+			<output message="tns:instanceCanBeProcessedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeReassigned">
+			<input message="tns:instanceCanBeReassigned"/>
+			<output message="tns:instanceCanBeReassignedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeDelegated">
+			<input message="tns:instanceCanBeDelegated"/>
+			<output message="tns:instanceCanBeDelegatedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeEscalated">
+			<input message="tns:instanceCanBeEscalated"/>
+			<output message="tns:instanceCanBeEscalatedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeReassignedToPeer">
+			<input message="tns:instanceCanBeReassignedToPeer"/>
+			<output message="tns:instanceCanBeReassignedToPeerResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeResumed">
+			<input message="tns:instanceCanBeResumed"/>
+			<output message="tns:instanceCanBeResumedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeSelected">
+			<input message="tns:instanceCanBeSelected"/>
+			<output message="tns:instanceCanBeSelectedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeSent">
+			<input message="tns:instanceCanBeSent"/>
+			<output message="tns:instanceCanBeSentResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeSuspended">
+			<input message="tns:instanceCanBeSuspended"/>
+			<output message="tns:instanceCanBeSuspendedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeUngrabbed">
+			<input message="tns:instanceCanBeUngrabbed"/>
+			<output message="tns:instanceCanBeUngrabbedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceCanBeUnselected">
+			<input message="tns:instanceCanBeUnselected"/>
+			<output message="tns:instanceCanBeUnselectedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instanceReassign">
+			<input message="tns:instanceReassign"/>
+			<output message="tns:instanceReassignResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesAbort">
+			<input message="tns:instancesAbort"/>
+			<output message="tns:instancesAbortResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesAddConsult">
+			<input message="tns:instancesAddConsult"/>
+			<output message="tns:instancesAddConsultResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesAddNote">
+			<input message="tns:instancesAddNote"/>
+			<output message="tns:instancesAddNoteResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesGrab">
+			<input message="tns:instancesGrab"/>
+			<output message="tns:instancesGrabResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesResume">
+			<input message="tns:instancesResume"/>
+			<output message="tns:instancesResumeResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesSelect">
+			<input message="tns:instancesSelect"/>
+			<output message="tns:instancesSelectResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesSend">
+			<input message="tns:instancesSend"/>
+			<output message="tns:instancesSendResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesSendBack">
+			<input message="tns:instancesSendBack"/>
+			<output message="tns:instancesSendBackResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesSendTo">
+			<input message="tns:instancesSendTo"/>
+			<output message="tns:instancesSendToResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesSuspend">
+			<input message="tns:instancesSuspend"/>
+			<output message="tns:instancesSuspendResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesGetTargetActivities">
+			<input message="tns:instancesGetTargetActivities"/>
+			<output message="tns:instancesGetTargetActivitiesResponse">
+			</output>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesUngrab">
+			<input message="tns:instancesUngrab"/>
+			<output message="tns:instancesUngrabResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesUnselect">
+			<input message="tns:instancesUnselect"/>
+			<output message="tns:instancesUnselectResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="activityPrepare">
+			<input message="tns:activityPrepare"/>
+			<output message="tns:activityPrepareResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="instancesRemoveBookmark">
+			<input message="tns:instancesRemoveBookmark"/>
+			<output message="tns:instancesRemoveBookmarkResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="activityExecute">
+			<input message="tns:activityExecute"/>
+			<output message="tns:activityExecuteResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="activityExecuteTask">
+			<input message="tns:activityExecuteTask"/>
+			<output message="tns:activityExecuteTaskResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantStoreProperty">
+			<input message="tns:participantStoreProperty"/>
+			<output message="tns:participantStorePropertyResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="taskCanBeProcessed">
+			<input message="tns:taskCanBeProcessed"/>
+			<output message="tns:taskCanBeProcessedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="taskCanBeSelected">
+			<input message="tns:taskCanBeSelected"/>
+			<output message="tns:taskCanBeSelectedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="taskCanBeUnselected">
+			<input message="tns:taskCanBeUnselected"/>
+			<output message="tns:taskCanBeUnselectedResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="tasksSelect">
+			<input message="tns:tasksSelect"/>
+			<output message="tns:tasksSelectResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="tasksUnselect">
+			<input message="tns:tasksUnselect"/>
+			<output message="tns:tasksUnselectResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+		<operation name="participantUpdatePassword">
+			<input message="tns:participantUpdatePassword"/>
+			<output message="tns:participantUpdatePasswordResponse"/>
+			<fault message="tns:OperationException" name="OperationException">
+			</fault>
+		</operation>
+	</portType>
+	<binding name="PapiWebServicePortBinding" type="tns:PapiWebService">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document">
+		</soap:binding>
+		<operation name="processesGetGlobalActivitiesByTaskType">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processesGetGlobalActivities">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processesGetApplications">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceHasAttachments">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceHasNotes">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantEnableMailReception">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantChangePasswordEnabled">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="activityGetGrabbableInstances">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceGetParticipants">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGetActiveVersion">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="activityGetDocumentation">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGetAllVersions">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processesGetAllVersions">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewGetApplications">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesGetBookmarks">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewGetChildren">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceGetLastConsult">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesGetConsults">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewsSetDefaultOrder">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="presentationGetDefaultByType">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="presentationGetDefaultByViewType">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceGrabbableFrom">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGetInstanceInActivity">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGetInstance">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGetInstanceByCorrelation">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceGetEvents">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceGetNotes">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGetInstances">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processesGetInstancesByFilter">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewGetInstances">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantUpdateLocale">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantLocale">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="noteGet">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="organization">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewGetParent">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewGetParentId">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantCurrent">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantFind">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="presentationGet">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="presentationsGetIds">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGet">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGetDocumentation">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceGetProcessId">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceGetVariable">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGetId">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processesGetIds">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processesGet">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantUpdateTimeZone">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantTimeZone">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="variableGet">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="variablesGet">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewGet">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewsGetIds">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processGetVisibleActivities">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processCreateInstance">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewHasNewInstances">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="viewsHaveNewInstances">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceRefresh">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantRetrieveProperty">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="activityExecuteApplication">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processRun">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantFindByName">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processSendRelatedNotification">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="processSendNotification">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesAddBookmark">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="activityCommit">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="activityAbort">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="activityAbortTask">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceGetGlobalActivities">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeAborted">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeSentBack">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeProcessed">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeReassigned">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeDelegated">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeEscalated">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeReassignedToPeer">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeResumed">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeSelected">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeSent">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeSuspended">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeUngrabbed">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceCanBeUnselected">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instanceReassign">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesAbort">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesAddConsult">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesAddNote">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesGrab">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesResume">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesSelect">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesSend">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesSendBack">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesSendTo">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesSuspend">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesGetTargetActivities">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesUngrab">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesUnselect">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="activityPrepare">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="instancesRemoveBookmark">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="activityExecute">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="activityExecuteTask">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantStoreProperty">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="taskCanBeProcessed">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="taskCanBeSelected">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="taskCanBeUnselected">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="tasksSelect">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="tasksUnselect">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="participantUpdatePassword">
+			<soap:operation soapAction=""/>
+			<input>
+				<wsp:Policy>
+					<wsp:PolicyReference URI="#ALBPM_UsernameTokenProfile">
+					</wsp:PolicyReference>
+				</wsp:Policy>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="OperationException">
+				<soap:fault name="OperationException" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="PapiWebService">
+		<port name="PapiWebServicePort" binding="tns:PapiWebServicePortBinding">
+			<soap:address location="http://195.87.47.71:7001/papiws/PapiWebServiceEndpoint">
+			</soap:address>
+		</port>
+	</service>
+</definitions>

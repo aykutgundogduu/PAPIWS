@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oper="http://xmlns.oracle.com/servicebus/pipeline/operations">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="PAPIWS/ProxyServiceWSDLs/UserOperations"/>
+            <con:binding>
+                <con:name>UserOperationsServiceSoapBinding</con:name>
+                <con:namespace>http://www.kocallianz.com.tr/UserOperations</con:namespace>
+            </con:binding>
+        </con:binding>
+        <oper:operations xmlns:cus="http://www.bea.com/wli/config/customizations" xmlns:xt="http://www.bea.com/wli/config/xmltypes">
+            <oper:monitoring aggregationInterval="10" enabled="false" level="pipeline"/>
+            <oper:pipeline-alerting enabled="false" level="normal"/>
+            <oper:sla-alerting enabled="false" level="normal"/>
+        </oper:operations>
+    </con:coreEntry>
+    <con:router xmlns:ser="http://www.bea.com/wli/sb/services">
+        <con:pipeline type="request" name="PipelinePairNode1_request">
+            <con:stage name="stage1">
+                <con:context>
+                    <con1:varNsDecl namespace="http://www.kocallianz.com.tr/UserOperations" prefix="user" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                    <con1:variable name="bpmusername" path="$bpmusername" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:xml-schema type="string"/>
+                    </con1:variable>
+                    <con1:variable name="bpmpassword" path="$bpmpassword" xmlns:con1="http://www.bea.com/wli/sb/typesystem/config">
+                        <con1:xml-schema type="string"/>
+                    </con1:variable>
+                </con:context>
+                <con:actions>
+                    <con1:assign varName="bpmusername" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-1683279164518973971-69159690.11ae83c8a54.-7ff9</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$body/user:getAuthenticationHeader/user:userName/text()</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:assign varName="bpmpassword" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-1683279164518973971-69159690.11ae83c8a54.-7ff8</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">12345678</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
+                    <con1:replace varName="body" contents-only="true" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-1683279164518973971-69159690.11ae83c8a54.-7ff7</con2:id>
+                        <con1:location>
+                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                        </con1:location>
+                        <con1:expr>
+                            <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config"><![CDATA[<wsse:Security  soap-env:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"> 
+	<wsse:UsernameToken wsu:Id="unt_N1erM9XEcJckeja8" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"> 
+		 <wsse:Username>{fn:data($bpmusername)}</wsse:Username> 
+		 <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">{fn:data($bpmpassword)}</wsse:Password> 
+	 </wsse:UsernameToken> 
+</wsse:Security>]]></con2:xqueryText>
+                        </con1:expr>
+                    </con1:replace>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="PipelinePairNode1_response"/>
+        <con:flow>
+            <con:branch-node type="operation" name="BranchNode1">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="getAuthenticationHeader">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairNode1">
+                                <con:request>PipelinePairNode1_request</con:request>
+                                <con:response>PipelinePairNode1_response</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
